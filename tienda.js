@@ -150,7 +150,7 @@ function enviarPedido() {
     textoMensaje += `- Instagram: ${ig}\n`;
 
     let mensajeCodificado = encodeURIComponent(textoMensaje);
-    let numeroVendedor = "5491155645255"; 
+    let numeroVendedor = "5491162838484"; 
     let urlWhatsApp = `https://wa.me/${numeroVendedor}?text=${mensajeCodificado}`;
     window.location.href = urlWhatsApp;
     
