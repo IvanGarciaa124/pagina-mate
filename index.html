@@ -209,7 +209,8 @@
             <article class="product-card animate-on-scroll">
                 <div class="product-img">
                     <!-- ZOOM: scale(1)  |  FOCO: center center -->
-                    <!-- Agregar foto real del producto acá -->
+                    <img src="termo1.jpg" data-images='["termo1.jpg", "termo2.jpg", "termo3.jpg"]' alt="Termo Plateado 1L"
+                         style="transform: scale(1); transform-origin: center center;" onclick="abrirLightbox(this)">
                 </div>
                 <div class="product-info">
                     <h4>Termo Media Manija, Plateado 1L</h4>
@@ -223,7 +224,8 @@
             <article class="product-card animate-on-scroll">
                 <div class="product-img">
                     <!-- ZOOM: scale(1)  |  FOCO: center center -->
-                    <!-- Agregar foto real del producto acá -->
+                    <img src="bombilla pico e loro.png" alt="Bombilla Pico Loro"
+                         style="transform: scale(1); transform-origin: center center;" onclick="abrirLightbox(this)">
                 </div>
                 <div class="product-info">
                     <h4>Bombilla Pico Loro</h4>
@@ -237,7 +239,8 @@
             <article class="product-card animate-on-scroll">
                 <div class="product-img">
                     <!-- ZOOM: scale(1)  |  FOCO: center center -->
-                    <!-- Agregar foto real del producto acá -->
+                    <img src="matealgarrobo1.jpg" data-images='["matealgarrobo1.jpg", "matealgarrobo2.jpg", "matealgarrobo3.jpg", "matealgarrobo4.jpg", "matealgarrobo5.jpg"]' alt="Mate Camionero Algarrobo"
+                         style="transform: scale(1); transform-origin: center center;" onclick="abrirLightbox(this)">
                 </div>
                 <div class="product-info">
                     <h4>Mate Camionero Algarrobo</h4>
@@ -251,7 +254,8 @@
             <article class="product-card animate-on-scroll">
                 <div class="product-img">
                     <!-- ZOOM: scale(1)  |  FOCO: center center -->
-                    <!-- Agregar foto real del producto acá -->
+                    <img src="mateimperialalgarrobo1.jpg" data-images='["mateimperialalgarrobo1.jpg", "mateimperialalgarrobo2.jpg"]' alt="Mate Imperial Algarrobo"
+                         style="transform: scale(1); transform-origin: center center;" onclick="abrirLightbox(this)">
                 </div>
                 <div class="product-info">
                     <h4>Mate Imperial Algarrobo</h4>
@@ -265,7 +269,8 @@
             <article class="product-card animate-on-scroll">
                 <div class="product-img">
                     <!-- ZOOM: scale(1)  |  FOCO: center center -->
-                    <!-- Agregar foto real del producto acá -->
+                    <img src="mateimperialcalabaza.jpg" alt="Mate Imperial Calabaza"
+                         style="transform: scale(1); transform-origin: center center;" onclick="abrirLightbox(this)">
                 </div>
                 <div class="product-info">
                     <h4>Mate Imperial Calabaza</h4>
@@ -279,7 +284,8 @@
             <article class="product-card animate-on-scroll">
                 <div class="product-img">
                     <!-- ZOOM: scale(1)  |  FOCO: center center -->
-                    <!-- Agregar foto real del producto acá -->
+                    <img src="matecamionerocalabaza1.jpg" data-images='["matecamionerocalabaza1.jpg", "matecamionerocalabaza2.jpg", "matecamionerocalabaza3.jpg"]' alt="Mate Camionero Calabaza"
+                         style="transform: scale(1); transform-origin: center center;" onclick="abrirLightbox(this)">
                 </div>
                 <div class="product-info">
                     <h4>Mate Camionero Calabaza</h4>
@@ -293,7 +299,8 @@
             <article class="product-card animate-on-scroll">
                 <div class="product-img">
                     <!-- ZOOM: scale(1)  |  FOCO: center center -->
-                    <!-- Agregar foto real del producto acá -->
+                    <img src="torpedo1.jpg" data-images='["torpedo1.jpg", "torpedo2.jpg", "torpedo3.jpg"]' alt="Mate Torpedo Calabaza"
+                         style="transform: scale(1); transform-origin: center center;" onclick="abrirLightbox(this)">
                 </div>
                 <div class="product-info">
                     <h4>Mate Torpedo Calabaza</h4>
@@ -421,6 +428,8 @@
     <!-- LIGHTBOX MODAL -->
     <div id="lightbox-modal" onclick="cerrarLightbox()">
         <button class="lightbox-cerrar" onclick="cerrarLightbox()">&times;</button>
+        <button id="lightbox-prev" class="lightbox-btn" onclick="cambiarImagenLightbox(-1, event)">&#10094;</button>
+        <button id="lightbox-next" class="lightbox-btn" onclick="cambiarImagenLightbox(1, event)">&#10095;</button>
         <div id="lightbox-container" onclick="event.stopPropagation()">
             <img id="lightbox-img" src="" alt="Producto en grande">
         </div>

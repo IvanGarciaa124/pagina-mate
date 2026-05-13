@@ -264,18 +264,59 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 // 11. LIGHTBOX MODAL
+let lightboxImages = [];
+let lightboxCurrentIndex = 0;
+
 function abrirLightbox(imgElement) {
     const modal = document.getElementById('lightbox-modal');
     const imgLightbox = document.getElementById('lightbox-img');
+    const btnPrev = document.getElementById('lightbox-prev');
+    const btnNext = document.getElementById('lightbox-next');
+    
     if (modal && imgLightbox) {
-        imgLightbox.src = imgElement.src;
+        if (imgElement.hasAttribute('data-images')) {
+            lightboxImages = JSON.parse(imgElement.getAttribute('data-images'));
+        } else {
+            lightboxImages = [imgElement.src];
+        }
+        
+        lightboxCurrentIndex = 0;
+        
         // Copiamos el zoom y el foco para que se vea idéntico pero más grande
+        imgLightbox.src = lightboxImages[lightboxCurrentIndex];
         imgLightbox.style.transform = imgElement.style.transform;
         imgLightbox.style.transformOrigin = imgElement.style.transformOrigin;
+        
+        if (btnPrev && btnNext) {
+            if (lightboxImages.length > 1) {
+                btnPrev.style.display = 'block';
+                btnNext.style.display = 'block';
+            } else {
+                btnPrev.style.display = 'none';
+                btnNext.style.display = 'none';
+            }
+        }
         
         modal.classList.add('mostrar');
         document.body.style.overflow = 'hidden'; // Evita scrollear el fondo
     }
+}
+
+function cambiarImagenLightbox(direccion, event) {
+    if (event) event.stopPropagation(); // Evitar cerrar el lightbox
+    lightboxCurrentIndex += direccion;
+    
+    if (lightboxCurrentIndex >= lightboxImages.length) {
+        lightboxCurrentIndex = 0;
+    } else if (lightboxCurrentIndex < 0) {
+        lightboxCurrentIndex = lightboxImages.length - 1;
+    }
+    
+    const imgLightbox = document.getElementById('lightbox-img');
+    imgLightbox.src = lightboxImages[lightboxCurrentIndex];
+    // Resetear el zoom a normal al cambiar foto
+    imgLightbox.style.transform = 'scale(1)';
+    imgLightbox.style.transformOrigin = 'center center';
 }
 
 function cerrarLightbox() {

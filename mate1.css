@@ -493,3 +493,28 @@ footer{background:var(--oscuro);color:#fff;padding:60px 8% 20px}
 .lightbox-cerrar:hover {
     transform: scale(1.2);
 }
+.lightbox-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: none;
+    font-size: 2rem;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 10000;
+    transition: background 0.3s ease, transform 0.2s ease;
+    display: none;
+}
+.lightbox-btn:hover {
+    background: rgba(255, 255, 255, 0.5);
+    transform: translateY(-50%) scale(1.1);
+}
+#lightbox-prev {
+    left: 20px;
+}
+#lightbox-next {
+    right: 20px;
+}
