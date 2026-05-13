@@ -21,7 +21,13 @@
         <nav id="menu-links">
             <ul>
                 <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#productos">Catálogo</a></li>
+                <li class="nav-dropdown">
+                    <a href="javascript:void(0)" class="dropdown-toggle">Catálogo <span class="dropdown-arrow">▾</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#cat-yerbas" onclick="cerrarDropdown()">Yerbas</a></li>
+                        <li><a href="#cat-equipamiento" onclick="cerrarDropdown()">Equipamiento</a></li>
+                    </ul>
+                </li>
                 <li><a href="#guia">Curado</a></li>
                 <li><a href="#nosotros">Equipo</a></li>
                 <li><a href="#contacto">Contacto</a></li>
@@ -93,16 +99,30 @@
 
     <!-- CATÁLOGO -->
     <section id="productos" class="products">
-        <h2 class="section-title animate-on-scroll">Nuestro Catálogo</h2> 
+        <h2 class="section-title animate-on-scroll">Nuestro Catálogo</h2>
+
+        <!-- BARRA DE BÚSQUEDA -->
+        <div class="search-container animate-on-scroll">
+            <div class="search-wrapper">
+                <span class="search-icon">🔍</span>
+                <input type="text" id="buscador-productos" placeholder="Buscar yerbas, termos, mates..." onkeyup="filtrarProductos()">
+            </div>
+        </div>
+
+        <!-- ====== SECCIÓN: YERBAS ====== -->
+        <div id="cat-yerbas" class="catalog-category animate-on-scroll">
+            <div class="category-header">
+                <span class="category-icon">🌿</span>
+                <h3 class="category-title">Yerbas</h3>
+                <div class="category-line"></div>
+            </div>
+        </div>
         
         <div class="product-grid">
             <!-- 1. Yerba Mate 500gr (Canarias) -->
             <article class="product-card animate-on-scroll">
                 <div class="product-img">
-                    <!-- ZOOM: cambiá scale(1.3) por scale(1), scale(1.5), scale(2), etc.  
-                         FOCO: cambiá "center center" por "center top", "center bottom", "left center", etc. -->
-                    <!-- ZOOM: cambiá scale(1.3) por scale(1), scale(1.5), scale(2), etc.  
-                         FOCO: cambiá "center center" por "center top", "center bottom", "left center", etc. -->
+                    <!-- ZOOM: scale(1.8)  |  FOCO: center center -->
                     <img src="Gemini_Generated_Image_wfhn8cwfhn8cwfhn.png" alt="Yerba Mate 500gr Canarias"
                          style="transform: scale(1.8); transform-origin: center center;" onclick="abrirLightbox(this)">
                 </div>
@@ -117,8 +137,7 @@
             <!-- 2. Yerba Mate 1KG (Canarias) -->
             <article class="product-card animate-on-scroll">
                 <div class="product-img">
-                    <!-- ZOOM: scale(1.3)  |  FOCO: center center -->
-                    <!-- ZOOM: scale(1.3)  |  FOCO: center center -->
+                    <!-- ZOOM: scale(1.8)  |  FOCO: center center -->
                     <img src="Gemini_Generated_Image_b1oam5b1oam5b1oa.png" alt="Yerba Mate 1KG Canarias"
                          style="transform: scale(1.8); transform-origin: center center;" onclick="abrirLightbox(this)">
                 </div>
@@ -133,8 +152,7 @@
             <!-- 3. Yerba Mate 500gr (Baldo) -->
             <article class="product-card animate-on-scroll">
                 <div class="product-img">
-                    <!-- ZOOM: scale(1.3)  |  FOCO: center center -->
-                    <!-- ZOOM: scale(1.3)  |  FOCO: center center -->
+                    <!-- ZOOM: scale(1.8)  |  FOCO: center center -->
                     <img src="Gemini_Generated_Image_c594gc594gc594gc.png" alt="Yerba Mate 500gr Baldo"
                          style="transform: scale(1.8); transform-origin: center center;" onclick="abrirLightbox(this)">
                 </div>
@@ -149,8 +167,7 @@
             <!-- 4. Yerba Mate 1KG (Baldo) -->
             <article class="product-card animate-on-scroll">
                 <div class="product-img">
-                    <!-- ZOOM: scale(1.3)  |  FOCO: center center -->
-                    <!-- ZOOM: scale(1.3)  |  FOCO: center center -->
+                    <!-- ZOOM: scale(1.8)  |  FOCO: center center -->
                     <img src="Gemini_Generated_Image_fnrfhmfnrfhmfnrf.png" alt="Yerba Mate 1KG Baldo"
                          style="transform: scale(1.8); transform-origin: center center;" onclick="abrirLightbox(this)">
                 </div>
@@ -165,8 +182,7 @@
             <!-- 5. Yerba Mate 500gr (Matesur) -->
             <article class="product-card animate-on-scroll">
                 <div class="product-img">
-                    <!-- ZOOM: scale(1.3)  |  FOCO: center center -->
-                    <!-- ZOOM: scale(1.3)  |  FOCO: center center -->
+                    <!-- ZOOM: scale(1.8)  |  FOCO: center center -->
                     <img src="Gemini_Generated_Image_apd1nqapd1nqapd1.png" alt="Yerba Mate 500gr Matesur"
                          style="transform: scale(1.8); transform-origin: center center;" onclick="abrirLightbox(this)">
                 </div>
@@ -177,15 +193,113 @@
                     <button class="btn-add" onclick="agregarAlCarrito('Yerba Mate 500gr (Matesur)', 0, 'stock-5')">Agregar</button>
                 </div>
             </article>
+        </div>
 
-            <!-- 6. Próximamente -->
+        <!-- ====== SECCIÓN: EQUIPAMIENTO ====== -->
+        <div id="cat-equipamiento" class="catalog-category animate-on-scroll" style="margin-top: 60px;">
+            <div class="category-header">
+                <span class="category-icon">🧉</span>
+                <h3 class="category-title">Equipamiento</h3>
+                <div class="category-line"></div>
+            </div>
+        </div>
+
+        <div class="product-grid">
+            <!-- 6. Termo Plateado 1L -->
             <article class="product-card animate-on-scroll">
-                <div class="product-img">PROXIMAMENTE...</div>
+                <div class="product-img">
+                    <!-- ZOOM: scale(1)  |  FOCO: center center -->
+                    <!-- Agregar foto real del producto acá -->
+                </div>
                 <div class="product-info">
-                    <h4>Próximamente</h4>
-                    <span class="price" id="precio-6">$0</span>
+                    <h4>Termo Media Manija, Plateado 1L</h4>
+                    <span class="price" id="precio-6">$11.500</span>
                     <p class="stock-info">Stock: <span id="stock-6">0</span></p>
-                    <button class="btn-add" onclick="agregarAlCarrito('Próximamente', 0, 'stock-6')" disabled style="opacity:0.5;cursor:not-allowed">Agregar</button>
+                    <button class="btn-add" onclick="agregarAlCarrito('Termo Plateado 1L', 11500, 'stock-6')">Agregar</button>
+                </div>
+            </article>
+
+            <!-- 7. Pico Loro -->
+            <article class="product-card animate-on-scroll">
+                <div class="product-img">
+                    <!-- ZOOM: scale(1)  |  FOCO: center center -->
+                    <!-- Agregar foto real del producto acá -->
+                </div>
+                <div class="product-info">
+                    <h4>Bombilla Pico Loro</h4>
+                    <span class="price" id="precio-7">$2.500</span>
+                    <p class="stock-info">Stock: <span id="stock-7">0</span></p>
+                    <button class="btn-add" onclick="agregarAlCarrito('Pico Loro', 2500, 'stock-7')">Agregar</button>
+                </div>
+            </article>
+
+            <!-- 8. Mate Camionero Algarrobo -->
+            <article class="product-card animate-on-scroll">
+                <div class="product-img">
+                    <!-- ZOOM: scale(1)  |  FOCO: center center -->
+                    <!-- Agregar foto real del producto acá -->
+                </div>
+                <div class="product-info">
+                    <h4>Mate Camionero Algarrobo</h4>
+                    <span class="price" id="precio-8">$7.500</span>
+                    <p class="stock-info">Stock: <span id="stock-8">0</span></p>
+                    <button class="btn-add" onclick="agregarAlCarrito('Mate Camionero Algarrobo', 7500, 'stock-8')">Agregar</button>
+                </div>
+            </article>
+
+            <!-- 9. Mate Imperial Algarrobo -->
+            <article class="product-card animate-on-scroll">
+                <div class="product-img">
+                    <!-- ZOOM: scale(1)  |  FOCO: center center -->
+                    <!-- Agregar foto real del producto acá -->
+                </div>
+                <div class="product-info">
+                    <h4>Mate Imperial Algarrobo</h4>
+                    <span class="price" id="precio-9">$13.000</span>
+                    <p class="stock-info">Stock: <span id="stock-9">0</span></p>
+                    <button class="btn-add" onclick="agregarAlCarrito('Mate Imperial Algarrobo', 13000, 'stock-9')">Agregar</button>
+                </div>
+            </article>
+
+            <!-- 10. Mate Imperial Calabaza -->
+            <article class="product-card animate-on-scroll">
+                <div class="product-img">
+                    <!-- ZOOM: scale(1)  |  FOCO: center center -->
+                    <!-- Agregar foto real del producto acá -->
+                </div>
+                <div class="product-info">
+                    <h4>Mate Imperial Calabaza</h4>
+                    <span class="price" id="precio-10">$19.000</span>
+                    <p class="stock-info">Stock: <span id="stock-10">0</span></p>
+                    <button class="btn-add" onclick="agregarAlCarrito('Mate Imperial Calabaza', 19000, 'stock-10')">Agregar</button>
+                </div>
+            </article>
+
+            <!-- 11. Mate Camionero Calabaza -->
+            <article class="product-card animate-on-scroll">
+                <div class="product-img">
+                    <!-- ZOOM: scale(1)  |  FOCO: center center -->
+                    <!-- Agregar foto real del producto acá -->
+                </div>
+                <div class="product-info">
+                    <h4>Mate Camionero Calabaza</h4>
+                    <span class="price" id="precio-11">$14.000</span>
+                    <p class="stock-info">Stock: <span id="stock-11">0</span></p>
+                    <button class="btn-add" onclick="agregarAlCarrito('Mate Camionero Calabaza', 14000, 'stock-11')">Agregar</button>
+                </div>
+            </article>
+
+            <!-- 12. Mate Torpedo Calabaza -->
+            <article class="product-card animate-on-scroll">
+                <div class="product-img">
+                    <!-- ZOOM: scale(1)  |  FOCO: center center -->
+                    <!-- Agregar foto real del producto acá -->
+                </div>
+                <div class="product-info">
+                    <h4>Mate Torpedo Calabaza</h4>
+                    <span class="price" id="precio-12">$16.000</span>
+                    <p class="stock-info">Stock: <span id="stock-12">0</span></p>
+                    <button class="btn-add" onclick="agregarAlCarrito('Mate Torpedo Calabaza', 16000, 'stock-12')">Agregar</button>
                 </div>
             </article>
         </div>

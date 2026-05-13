@@ -41,12 +41,20 @@ body{font-family:'Montserrat',sans-serif;background:var(--crema);color:var(--osc
 .navbar.scrolled{background:rgba(255,255,255,0.95);box-shadow:0 4px 30px var(--sombra)}
 .logo img{height:60px;border-radius:50%;transition:transform var(--transition);margin-right:30px}
 .logo img:hover{transform:scale(1.08) rotate(-3deg)}
-.navbar ul{display:flex;list-style:none;gap:8px}
+.navbar ul{display:flex;list-style:none;gap:4px;align-items:center}
+.navbar ul li{display:flex;align-items:center}
 .navbar ul li a{
     text-decoration:none;color:var(--oscuro);font-weight:600;font-size:.9rem;
     padding:8px 16px;border-radius:8px;transition:all var(--transition);position:relative;
+    display:inline-flex;align-items:center;
 }
-.navbar ul li a:hover{color:var(--verde);background:rgba(74,103,65,0.08)}
+.navbar ul li a::after{
+    content:'';position:absolute;bottom:2px;left:50%;width:0;height:2px;
+    background:linear-gradient(90deg,var(--verde),var(--dorado));
+    transition:all var(--transition);transform:translateX(-50%);border-radius:2px;
+}
+.navbar ul li a:hover{color:var(--verde);background:rgba(74,103,65,0.06)}
+.navbar ul li a:hover::after{width:60%}
 .btn-primary-nav{
     background:linear-gradient(135deg,var(--verde),var(--verde-claro));
     color:#fff;border:none;padding:10px 22px;border-radius:50px;cursor:pointer;
@@ -129,6 +137,59 @@ body{font-family:'Montserrat',sans-serif;background:var(--crema);color:var(--osc
     background:linear-gradient(90deg,var(--verde),var(--dorado));
     margin:12px auto 0;border-radius:2px;
 }
+
+/* === BUSCADOR === */
+.search-container{
+    display:flex;justify-content:center;margin:30px 0 40px;padding:0 10px;
+}
+.search-wrapper{
+    position:relative;width:100%;max-width:500px;
+}
+.search-icon{
+    position:absolute;left:18px;top:50%;transform:translateY(-50%);
+    font-size:1.1rem;color:var(--gris);opacity:0.6;
+}
+#buscador-productos{
+    width:100%;padding:14px 16px 14px 48px;
+    border:2px solid rgba(0,0,0,0.06);border-radius:50px;
+    font-family:'Montserrat',sans-serif;font-size:1rem;
+    background:var(--blanco);color:var(--oscuro);
+    transition:all var(--transition);
+    box-shadow:0 6px 20px var(--sombra);
+}
+#buscador-productos:focus{
+    outline:none;border-color:var(--verde);
+    box-shadow:0 8px 25px rgba(74,103,65,0.15);
+}
+.producto-oculto{display:none!important}
+.categoria-oculta{display:none!important}
+
+/* === CATEGORY HEADERS === */
+.catalog-category{margin-top:40px}
+.category-header{
+    display:flex;align-items:center;gap:14px;
+    padding:0 4px;
+}
+.category-icon{
+    font-size:2rem;
+    width:52px;height:52px;
+    display:flex;align-items:center;justify-content:center;
+    background:linear-gradient(135deg,rgba(74,103,65,0.12),rgba(212,165,116,0.18));
+    border-radius:14px;flex-shrink:0;
+}
+.category-title{
+    font-family:'Playfair Display',serif;
+    font-size:clamp(1.3rem,2.5vw,1.8rem);
+    color:var(--oscuro);font-weight:700;
+    text-transform:uppercase;letter-spacing:2px;
+    white-space:nowrap;
+}
+.category-line{
+    flex:1;height:2px;
+    background:linear-gradient(90deg,var(--dorado),transparent);
+    border-radius:2px;
+}
+
 .product-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin-top:40px}
 .product-card{
     background:var(--blanco);border-radius:var(--radius);overflow:hidden;
@@ -154,7 +215,7 @@ body{font-family:'Montserrat',sans-serif;background:var(--crema);color:var(--osc
     display:inline-block;font-size:1.4rem;font-weight:800;color:var(--verde);
     margin:8px 0;padding:4px 16px;background:rgba(74,103,65,0.08);border-radius:8px;
 }
-.stock-info{font-size:.82rem;color:var(--gris);margin-bottom:14px}
+.stock-info{display:none}
 .stock-info span{font-weight:700;color:var(--verde)}
 .btn-add{
     background:linear-gradient(135deg,var(--oscuro),#2d2d4a);
@@ -319,6 +380,43 @@ footer{background:var(--oscuro);color:#fff;padding:60px 8% 20px}
 .whatsapp-flotante:hover{transform:scale(1.12);box-shadow:0 8px 30px rgba(37,211,102,0.5)}
 .whatsapp-flotante svg{width:28px!important;height:28px!important;margin:0!important}
 
+/* === NAVBAR DROPDOWN === */
+.nav-dropdown{position:relative;display:flex;align-items:center}
+.dropdown-toggle{display:inline-flex;align-items:center;gap:5px}
+.dropdown-arrow{
+    font-size:.65rem;display:inline-flex;align-items:center;
+    transition:transform var(--transition);opacity:.6;
+}
+.nav-dropdown:hover .dropdown-arrow,
+.nav-dropdown.open .dropdown-arrow{transform:rotate(180deg);opacity:1}
+.dropdown-menu{
+    position:absolute;top:100%;left:50%;transform:translateX(-50%);
+    min-width:190px;list-style:none;
+    background:#fff;
+    border:1px solid rgba(0,0,0,0.06);border-radius:14px;
+    box-shadow:0 16px 48px rgba(0,0,0,0.1),0 2px 8px rgba(0,0,0,0.04);
+    padding:6px;padding-top:10px;
+    opacity:0;visibility:hidden;pointer-events:none;
+    transition:opacity var(--transition),visibility var(--transition);
+}
+.nav-dropdown:hover .dropdown-menu,
+.nav-dropdown.open .dropdown-menu{
+    opacity:1;visibility:visible;pointer-events:all;
+}
+.dropdown-menu li{margin:0}
+.dropdown-menu li a{
+    display:flex;align-items:center;gap:10px;
+    padding:10px 16px;font-size:.88rem;font-weight:600;
+    color:var(--oscuro);text-decoration:none;border-radius:10px;
+    transition:all var(--transition);border-left:3px solid transparent;
+}
+.dropdown-menu li a::after{display:none}
+.dropdown-menu li a:hover{
+    background:rgba(74,103,65,0.07);color:var(--verde);
+    border-left-color:var(--verde);
+}
+.dropdown-menu li+li{border-top:1px solid rgba(0,0,0,0.04)}
+
 /* === MENÚ HAMBURGUESA === */
 .btn-menu-movil{display:none;background:none;border:none;font-size:1.8rem;color:var(--marron);cursor:pointer}
 
@@ -333,6 +431,12 @@ footer{background:var(--oscuro);color:#fff;padding:60px 8% 20px}
     #menu-links.menu-activo{display:block}
     .navbar ul{flex-direction:column;gap:12px;padding-bottom:12px;border-bottom:1px solid rgba(0,0,0,0.08)}
     .navbar ul li a{margin:0;font-size:.88rem}
+    .navbar ul li a::after{display:none}
+    .dropdown-menu{position:static;transform:none;min-width:100%;box-shadow:none;border:none;border-radius:8px;background:rgba(0,0,0,0.03);margin-top:6px;max-height:0;overflow:hidden;padding:0;opacity:0;visibility:hidden;pointer-events:none;transition:max-height 0.35s ease,padding 0.35s ease,opacity 0.3s ease}
+    .nav-dropdown:hover .dropdown-menu{opacity:0;visibility:hidden;pointer-events:none;max-height:0}
+    .nav-dropdown.open .dropdown-menu{max-height:200px;padding:6px 0;opacity:1;visibility:visible;pointer-events:all}
+    .dropdown-menu li a{justify-content:center;padding:8px 16px;font-size:.85rem;border-left:none}
+    .dropdown-menu li+li{border-top:none}
     .hero{height:80vh;background-attachment:scroll}
     .hero h1,.ritual{font-size:2rem}
     .hero-description{font-size:.95rem;margin-bottom:24px}

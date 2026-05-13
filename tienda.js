@@ -6,50 +6,30 @@ let preciosDesdeExcel = {}; // <-- MEMORIA PARA LOS PRECIOS
 // 1. SUMAR AL CARRITO
 function agregarAlCarrito(nombreProducto, precioOriginal, idStock) {
     let precioReal = preciosDesdeExcel[idStock] ? preciosDesdeExcel[idStock] : precioOriginal;
-    let elementoStock = document.getElementById(idStock);
-    let stockActual = parseInt(elementoStock.innerText);
 
-    if (stockActual > 0) {
-        stockActual--;
-        elementoStock.innerText = stockActual;
+    let productoExistente = carrito.find(item => item.nombre === nombreProducto);
 
-        let productoExistente = carrito.find(item => item.nombre === nombreProducto);
-
-        if (productoExistente) {
-            productoExistente.cantidad++;
-        } else {
-            carrito.push({ 
-                nombre: nombreProducto, 
-                precioUnitario: precioReal,
-                cantidad: 1, 
-                stockReferencia: idStock 
-            });
-        }
-        
-        totalPesos += precioReal;
-        cantidadTotalItems++; 
-        actualizarVisualCarrito();
-        
-        let modal = document.getElementById('modal-carrito');
-        modal.classList.add('carrito-visible');
-
+    if (productoExistente) {
+        productoExistente.cantidad++;
     } else {
-        let cartel = document.getElementById('toast-stock');
-        if(cartel) {
-            cartel.innerText = "¡Uy! Nos quedamos sin stock de " + nombreProducto;
-            cartel.classList.add('mostrar');
-            setTimeout(() => { cartel.classList.remove('mostrar'); }, 3000);
-        }
+        carrito.push({ 
+            nombre: nombreProducto, 
+            precioUnitario: precioReal,
+            cantidad: 1
+        });
     }
+    
+    totalPesos += precioReal;
+    cantidadTotalItems++; 
+    actualizarVisualCarrito();
+    
+    let modal = document.getElementById('modal-carrito');
+    modal.classList.add('carrito-visible');
 }
 
 // 2. ELIMINAR DEL CARRITO
 function eliminarDelCarrito(indice) {
     let producto = carrito[indice];
-
-    let elementoStock = document.getElementById(producto.stockReferencia);
-    let stockActual = parseInt(elementoStock.innerText);
-    elementoStock.innerText = stockActual + 1;
 
     totalPesos -= producto.precioUnitario;
     cantidadTotalItems--;
@@ -163,7 +143,62 @@ function toggleMenu() {
     menu.classList.toggle('menu-activo');
 }
 
-// --- 8. CONEXIÓN DIRECTA CON GOOGLE SHEETS (SIN LÍMITES) ---
+// 7b. DROPDOWN CATÁLOGO
+function cerrarDropdown() {
+    document.querySelectorAll('.nav-dropdown').forEach(d => d.classList.remove('open'));
+}
+
+// Toggle dropdown al hacer click (funciona en mobile y desktop táctil)
+document.addEventListener('click', function(e) {
+    let toggleBtn = e.target.closest('.dropdown-toggle');
+    if (toggleBtn) {
+        e.preventDefault();
+        let dropdown = toggleBtn.closest('.nav-dropdown');
+        dropdown.classList.toggle('open');
+    } else if (!e.target.closest('.dropdown-menu')) {
+        cerrarDropdown();
+    }
+});
+
+// 8. BUSCADOR DE PRODUCTOS
+function filtrarProductos() {
+    let input = document.getElementById('buscador-productos').value.toLowerCase();
+    
+    // Función auxiliar para filtrar una categoría
+    function filtrarCategoria(idCategoria) {
+        let catHeader = document.getElementById(idCategoria);
+        if (!catHeader) return;
+        
+        let grid = catHeader.nextElementSibling;
+        if (!grid || !grid.classList.contains('product-grid')) return;
+        
+        let cards = grid.querySelectorAll('.product-card');
+        let visibles = 0;
+        
+        cards.forEach(card => {
+            let nombre = card.querySelector('h4').innerText.toLowerCase();
+            if (nombre.includes(input)) {
+                card.classList.remove('producto-oculto');
+                visibles++;
+            } else {
+                card.classList.add('producto-oculto');
+            }
+        });
+        
+        if (visibles === 0) {
+            catHeader.classList.add('categoria-oculta');
+            grid.classList.add('categoria-oculta');
+        } else {
+            catHeader.classList.remove('categoria-oculta');
+            grid.classList.remove('categoria-oculta');
+        }
+    }
+
+    filtrarCategoria('cat-yerbas');
+    filtrarCategoria('cat-equipamiento');
+}
+
+// --- 9. CONEXIÓN DIRECTA CON GOOGLE SHEETS (SIN LÍMITES) ---
 const LINK_CSV = "https://docs.google.com/spreadsheets/d/e/2PACX-1vT4hUnxOnSWRy5zB8-N8CoUbiajbB2eqvFXXMLrgxx-xmM2Zr6YHqCKS2xo_malGOTWigtES3DNvIw2/pub?gid=0&single=true&output=csv";
 
 async function cargarStockDesdeExcel() {
@@ -174,16 +209,10 @@ async function cargarStockDesdeExcel() {
 
         for (let i = 1; i < filas.length; i++) {
             let columnas = filas[i].split(',');
-            if (columnas.length < 4) continue;
+            if (columnas.length < 3) continue;
 
             let idProducto = columnas[0].trim();
             let precioProducto = columnas[2].trim();
-            let stockProducto = columnas[3].trim();
-
-            let elementoStock = document.getElementById(idProducto);
-            if (elementoStock) {
-                elementoStock.innerText = stockProducto;
-            }
 
             if (precioProducto) {
                 preciosDesdeExcel[idProducto] = parseInt(precioProducto);
