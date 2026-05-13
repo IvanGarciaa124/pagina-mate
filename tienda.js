@@ -289,8 +289,8 @@ function abrirLightbox(imgElement) {
         
         if (btnPrev && btnNext) {
             if (lightboxImages.length > 1) {
-                btnPrev.style.display = 'block';
-                btnNext.style.display = 'block';
+                btnPrev.style.display = 'flex';
+                btnNext.style.display = 'flex';
             } else {
                 btnPrev.style.display = 'none';
                 btnNext.style.display = 'none';
@@ -327,9 +327,16 @@ function cerrarLightbox() {
     }
 }
 
-// Cerrar lightbox con la tecla ESC
+// Cerrar lightbox con la tecla ESC o navegar con flechas
 document.addEventListener('keydown', function(event) {
-    if (event.key === "Escape") {
-        cerrarLightbox();
+    const modal = document.getElementById('lightbox-modal');
+    if (modal && modal.classList.contains('mostrar')) {
+        if (event.key === "Escape") {
+            cerrarLightbox();
+        } else if (event.key === "ArrowLeft" && lightboxImages.length > 1) {
+            cambiarImagenLightbox(-1);
+        } else if (event.key === "ArrowRight" && lightboxImages.length > 1) {
+            cambiarImagenLightbox(1);
+        }
     }
 });
