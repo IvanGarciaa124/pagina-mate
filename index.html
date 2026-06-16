@@ -28,8 +28,8 @@
                         <li><a href="#cat-equipamiento" onclick="cerrarDropdown()">Equipamiento</a></li>
                     </ul>
                 </li>
-                <li><a href="#guia">Curado</a></li>
-                <li><a href="#nosotros">Equipo</a></li>
+                <li><a href="#curado">Curado</a></li>
+                <li><a href="#faq">Preguntas Frecuentes</a></li>
                 <li><a href="#contacto">Contacto</a></li>
             </ul>
         </nav>
@@ -70,7 +70,7 @@
     <!-- HERO -->
     <section id="inicio" class="hero">
         <div class="hero-content">
-            <span class="badge">Nuevo Ingreso: Yerba canarias 500gr</span>
+            <span class="badge">Nuevo Ingreso: MATE RANCHERO</span>
             <h1 class="ritual">El ritual que nos une, <br><span>con el mejor compañero.</span></h1>
             <p class="hero-description">Artesanía en cuero y calabaza para los que saben cebar de verdad.</p>
             <a href="#productos" class="hero-cta">Ver Catálogo</a>
@@ -78,8 +78,9 @@
         <div class="scroll-indicator">↓</div>
     </section>
 
-    <!-- FEATURES -->
-    <section class="features">
+    <div id="view-catalogo" class="page-view">
+        <!-- FEATURES -->
+        <section class="features">
         <div class="feature-item animate-on-scroll">
             <span class="icon">🚚</span>
             <h3>Envíos a todo CABA</h3>
@@ -494,75 +495,117 @@
             <span class="autor">— Ando Mateando</span>
         </blockquote>
     </section>
+    </div>
 
     <!-- GUÍA DE CURADO -->
-    <section id="guia" class="curado-section">
-        <div class="curado-container">
-            <div class="curado-text animate-on-scroll">
-                <h2>¿Cómo curar tu mate?</h2>
-                <p style="margin-bottom: 20px; opacity: 0.85;">Un buen mate empieza por un buen curado. Seguí nuestros pasos recomendados:</p>
-                <ol>
-                    <li>Llenar con yerba usada.</li>
-                    <li>Humedecer con agua tibia.</li>
-                    <li>Dejar reposar 24 horas.</li>
-                    <li>Raspar el interior con cuidado.</li>
-                </ol>
+    <div id="view-curado" class="page-view" style="display: none;">
+        <section id="guia" class="curado-section">
+            <div class="curado-container curado-vertical-layout">
+                
+                <div class="curado-media animate-on-scroll">
+                    <img src="Como curar tu mate.jpg" class="curado-infographic" alt="Cómo curar tu mate">
+                </div>
+
+                <div class="curado-text-content animate-on-scroll">
+                    <h2 class="curado-main-title">¿Por qué tenemos que curar nuestro mate?</h2>
+                    <p class="curado-intro">Curar es sellar el material orgánico (los poros) del mate para que el sabor no sea invasivo e intenso.</p>
+                    
+                    <div class="curado-divider"></div>
+                    
+                    <h3 class="curado-subtitle-now">Ahora sí...</h3>
+                    <h2 class="curado-steps-title">¿Cómo curar mi mate?</h2>
+                    
+                    <ol class="curado-steps-list">
+                        <li>
+                            <span class="step-num">#1</span>
+                            <p>Lavar bien el interior del mate con agua caliente.</p>
+                        </li>
+                        <li>
+                            <span class="step-num">#2</span>
+                            <p>Agregar yerba usada hasta cubrir 3/4 partes del mate y verter un poco de agua (temperatura natural) para conservar la humedad de la yerba.</p>
+                        </li>
+                        <li>
+                            <span class="step-num">#3</span>
+                            <p>Dejar reposar la yerba en el mate por 24 horas.</p>
+                        </li>
+                        <li>
+                            <span class="step-num">#4</span>
+                            <p>Quitar la yerba del mate y raspar el interior con una cuchara para quitar el hollejo, membranas o fragmentos de madera/calabaza.</p>
+                        </li>
+                        <li>
+                            <span class="step-num">#5</span>
+                            <p>Volver a repetir la técnica desde el comienzo pero sin lavar el mate.</p>
+                        </li>
+                    </ol>
+
+                    <div class="curado-recommendation">
+                        <p>💡 Recomendamos repetir el proceso <strong>3 veces como mínimo</strong>.</p>
+                    </div>
+
+                    <h3 class="curado-enjoy-text">¡QUE LO DISFRUTES!</h3>
+                </div>
+
             </div>
-            <div class="animate-on-scroll">
-                <img src="matecuradonuevo.jpg" class="curado-img" alt="Mate curado">
+        </section>
+    </div>
+
+    <!-- PREGUNTAS FRECUENTES -->
+    <div id="view-faq" class="page-view" style="display: none;">
+        <section id="preguntas-frecuentes" class="faq-section">
+            <h2 class="section-title animate-on-scroll">Preguntas Frecuentes</h2>
+            <div class="faq-container animate-on-scroll">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>¿Hacen envíos fuera de CABA?</span>
+                        <span class="faq-icon">↓</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Por el momento realizamos envíos únicamente dentro de CABA de manera directa para garantizar que los productos lleguen rápidos y en perfectas condiciones. Podés consultar el costo de envío a tu zona al momento de realizar tu pedido.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>¿Cuáles son los métodos de pago aceptados?</span>
+                        <span class="faq-icon">↓</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Aceptamos pagos en efectivo al recibir el producto o mediante transferencia bancaria. Al enviar tu pedido por WhatsApp te brindaremos los datos necesarios para realizar la transferencia.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>¿Cómo sé si hay stock disponible?</span>
+                        <span class="faq-icon">↓</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Solemos tener todos nuestros productos en stock. De todas formas, te recomendamos comunicarte con nosotros vía <strong>WhatsApp</strong> o <strong>Instagram</strong> para consultar la disponibilidad del modelo específico de tu preferencia antes de comprar.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>¿Los mates vienen curados?</span>
+                        <span class="faq-icon">↓</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>No, todos nuestros mates se entregan nuevos sin curar para que vos puedas hacer tu propio ritual. Podés consultar los pasos detallados de cómo curar tu mate en nuestra pestaña de <strong>Curado</strong> en el menú superior.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>¿Cómo debo cuidar mi mate después de curarlo?</span>
+                        <span class="faq-icon">↓</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Es muy importante no dejar la yerba usada dentro del mate por mucho tiempo una vez terminado de tomar. Enjuagalo solo con agua, escurrilo y dejalo secar boca arriba en un lugar ventilado para evitar la aparición de hongos y humedad.</p>
+                    </div>
+                </div>
             </div>
-        </div>
-    </section>
-
-    <!-- EQUIPO -->
-    <section id="nosotros" class="owners-section">
-        <h2 class="section-title animate-on-scroll">El equipo de Ando Mateando</h2>        
-        <div class="owners-grid">
-            <article class="owner-card animate-on-scroll">
-                <div class="owner-img-container">
-                    <div class="owner-placeholder"></div>
-                </div>
-                <div class="owner-info">
-                    <h3>Ivan Garcia</h3>
-                    <p class="owner-role">Programador</p>
-                    <p class="owner-bio">"Encargado de mantener la pagina web y modificar el stock de la misma"</p>
-                </div>
-            </article>
-
-            <article class="owner-card animate-on-scroll">
-                <div class="owner-img-container">
-                    <div class="owner-placeholder"></div>
-                </div>
-                <div class="owner-info">
-                    <h3>Lautaro Colombo</h3>
-                    <p class="owner-role">Diseñador grafico</p>
-                    <p class="owner-bio">"Creador de la identidad visual de Ando Mateando"</p>
-                </div>
-            </article>
-
-            <article class="owner-card animate-on-scroll">
-                <div class="owner-img-container">
-                    <div class="owner-placeholder"></div>
-                </div>
-                <div class="owner-info">
-                    <h3>Juan Jose Markman</h3>
-                    <p class="owner-role">Tesorero</p>
-                    <p class="owner-bio">"Es quien maneja el dinero de la empresa y lo distribuye"</p>
-                </div>
-            </article>
-
-            <article class="owner-card animate-on-scroll">
-                <div class="owner-img-container">
-                    <div class="owner-placeholder"></div>
-                </div>
-                <div class="owner-info">
-                    <h3>Octavio Santamaria</h3>
-                    <p class="owner-role">Despachador</p>
-                    <p class="owner-bio">"Quien hace que tu compañero llegue impecable a la puerta de tu casa"</p>
-                </div>
-            </article>
-        </div>
-    </section>
+        </section>
+    </div>
 
     <!-- FOOTER -->
     <footer id="contacto">
@@ -576,8 +619,8 @@
                 <ul>
                     <li><a href="#inicio">Inicio</a></li>
                     <li><a href="#productos">Catálogo</a></li>
-                    <li><a href="#guia">Guía de Curado</a></li>
-                    <li><a href="#nosotros">Equipo</a></li>
+                    <li><a href="#curado">Guía de Curado</a></li>
+                    <li><a href="#faq">Preguntas Frecuentes</a></li>
                 </ul>
             </div>
             <div class="footer-social">

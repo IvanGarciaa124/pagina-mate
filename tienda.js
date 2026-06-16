@@ -231,15 +231,113 @@ async function cargarStockDesdeExcel() {
     }
 }
 
+// GESTOR DE NAVEGACIÓN (SPA)
+function navigate() {
+    let hash = window.location.hash || '#catalogo';
+    let view = 'catalogo';
+
+    if (hash === '#curado' || hash === '#guia') {
+        view = 'curado';
+    } else if (hash === '#faq' || hash === '#preguntas') {
+        view = 'faq';
+    } else if (hash === '#inicio') {
+        view = 'catalogo';
+    } else if (hash === '#productos' || hash.startsWith('#cat-')) {
+        view = 'catalogo';
+    }
+
+    const viewCatalogo = document.getElementById('view-catalogo');
+    const viewCurado = document.getElementById('view-curado');
+    const viewFaq = document.getElementById('view-faq');
+
+    if (viewCatalogo) viewCatalogo.style.display = (view === 'catalogo') ? 'block' : 'none';
+    if (viewCurado) viewCurado.style.display = (view === 'curado') ? 'block' : 'none';
+    if (viewFaq) viewFaq.style.display = (view === 'faq') ? 'block' : 'none';
+
+    // Actualizar clase 'active' en los enlaces del menú
+    document.querySelectorAll('#menu-links a, .footer-links a').forEach(link => {
+        link.classList.remove('active');
+        let href = link.getAttribute('href');
+        if (href) {
+            if (view === 'catalogo' && (href === '#inicio' || href === '#productos' || href === '#catalogo')) {
+                link.classList.add('active');
+            } else if (view === 'curado' && (href === '#curado' || href === '#guia')) {
+                link.classList.add('active');
+            } else if (view === 'faq' && href === '#faq') {
+                link.classList.add('active');
+            }
+        }
+    });
+
+    if (hash === '#inicio') {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else if (hash === '#productos') {
+        const prodSection = document.getElementById('productos');
+        if (prodSection) prodSection.scrollIntoView({ behavior: 'smooth' });
+    } else if (hash === '#contacto') {
+        const contactSection = document.getElementById('contacto');
+        if (contactSection) contactSection.scrollIntoView({ behavior: 'smooth' });
+    } else if (hash === '#curado' || hash === '#guia') {
+        const curadoSection = document.getElementById('guia');
+        if (curadoSection) {
+            setTimeout(() => {
+                curadoSection.scrollIntoView({ behavior: 'smooth' });
+            }, 100);
+        }
+    } else if (hash === '#faq' || hash === '#preguntas') {
+        const faqSection = document.getElementById('preguntas-frecuentes');
+        if (faqSection) {
+            setTimeout(() => {
+                faqSection.scrollIntoView({ behavior: 'smooth' });
+            }, 100);
+        }
+    } else if (hash.startsWith('#cat-')) {
+        const categoryElement = document.getElementById(hash.substring(1));
+        if (categoryElement) {
+            setTimeout(() => {
+                categoryElement.scrollIntoView({ behavior: 'smooth' });
+            }, 100);
+        }
+    } else {
+        window.scrollTo({ top: 0, behavior: 'auto' });
+    }
+}
+
 document.addEventListener("DOMContentLoaded", function() {
     cargarStockDesdeExcel();
+
+    // Iniciar navegación
+    window.addEventListener('hashchange', navigate);
+    navigate();
+
+    // Acordeones interactivos FAQ
+    document.querySelectorAll('.faq-question').forEach(button => {
+        button.addEventListener('click', () => {
+            const faqItem = button.parentElement;
+            const answer = button.nextElementSibling;
+            
+            document.querySelectorAll('.faq-item').forEach(item => {
+                if (item !== faqItem) {
+                    item.classList.remove('faq-activo');
+                    const ans = item.querySelector('.faq-answer');
+                    if (ans) ans.style.maxHeight = null;
+                }
+            });
+
+            faqItem.classList.toggle('faq-activo');
+            if (faqItem.classList.contains('faq-activo')) {
+                answer.style.maxHeight = answer.scrollHeight + 'px';
+            } else {
+                answer.style.maxHeight = null;
+            }
+        });
+    });
 
     // 9. ANIMACIONES AL HACER SCROLL (Intersection Observer)
     const elementosAnimados = document.querySelectorAll('.animate-on-scroll');
     const observador = new IntersectionObserver((entries) => {
         entries.forEach((entry, index) => {
             if (entry.isIntersecting) {
-                // Delay escalonado para que aparezcan uno tras otro
                 setTimeout(() => {
                     entry.target.classList.add('visible');
                 }, index * 100);
