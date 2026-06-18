@@ -27,6 +27,43 @@ function agregarAlCarrito(nombreProducto, precioOriginal, idStock) {
     modal.classList.add('carrito-visible');
 }
 
+// 1b. CAMBIAR VARIANTE DE COLOR
+function cambiarVariante(productId, imgSrc, productName, stockId, btnElement) {
+    // Cambiar imagen
+    let img = document.getElementById('img-' + productId);
+    if (img) {
+        img.src = imgSrc;
+    }
+    
+    // Cambiar botón activo
+    let card = document.getElementById('card-' + productId);
+    if (card) {
+        card.querySelectorAll('.color-swatch').forEach(s => s.classList.remove('active'));
+        btnElement.classList.add('active');
+        
+        // Ocultar todos los precios y stocks visibles, mostrar el activo
+        let allPrices = card.querySelectorAll('.price');
+        let allStocks = card.querySelectorAll('.stock-info');
+        
+        allPrices.forEach(p => p.style.display = 'none');
+        allStocks.forEach(s => s.style.display = 'none');
+        
+        let priceId = stockId.replace('stock', 'precio');
+        let activePrice = document.getElementById(priceId);
+        let activeStock = activePrice ? activePrice.nextElementSibling : null;
+        
+        if (activePrice) activePrice.style.display = '';
+        if (activeStock) activeStock.style.display = '';
+    }
+    
+    // Actualizar el botón de agregar
+    let btn = document.getElementById('btn-' + productId);
+    if (btn) {
+        let precio = preciosDesdeExcel[stockId] ? preciosDesdeExcel[stockId] : 0;
+        btn.setAttribute('onclick', `agregarAlCarrito('${productName}', ${precio}, '${stockId}')`);
+    }
+}
+
 // 2. ELIMINAR DEL CARRITO
 function eliminarDelCarrito(indice) {
     let producto = carrito[indice];

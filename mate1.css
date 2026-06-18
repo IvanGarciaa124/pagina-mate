@@ -226,6 +226,39 @@ body{font-family:'Montserrat',sans-serif;background:var(--crema);color:var(--osc
 .btn-add:hover{background:linear-gradient(135deg,var(--verde),var(--verde-claro));transform:translateY(-2px)}
 .btn-add:active{transform:scale(.97)}
 
+/* === COLOR SELECTOR === */
+.color-selector{
+    display:flex;gap:8px;justify-content:center;margin:8px 0 4px;
+}
+.color-swatch{
+    width:28px;height:28px;border-radius:50%;cursor:pointer;
+    border:2px solid rgba(0,0,0,0.1);
+    transition:all var(--transition);
+    position:relative;
+    box-shadow:0 2px 6px rgba(0,0,0,0.1);
+}
+.color-swatch:hover{
+    transform:scale(1.15);
+    box-shadow:0 4px 12px rgba(0,0,0,0.2);
+}
+.color-swatch.active{
+    border-color:var(--verde);
+    box-shadow:0 0 0 3px rgba(74,103,65,0.25), 0 2px 8px rgba(0,0,0,0.15);
+    transform:scale(1.1);
+}
+.color-swatch::after{
+    content:attr(title);
+    position:absolute;bottom:calc(100% + 8px);left:50%;transform:translateX(-50%);
+    background:var(--oscuro);color:#fff;
+    font-size:.7rem;font-weight:600;
+    padding:4px 10px;border-radius:6px;white-space:nowrap;
+    opacity:0;visibility:hidden;
+    transition:all 0.2s ease;pointer-events:none;
+}
+.color-swatch:hover::after{
+    opacity:1;visibility:visible;
+}
+
 /* === BANNER FRASE === */
 .banner-frase{
     padding:100px 8%;text-align:center;position:relative;
