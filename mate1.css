@@ -636,40 +636,164 @@ footer{background:var(--oscuro);color:#fff;padding:60px 8% 20px}
 /* === MENÚ HAMBURGUESA === */
 .btn-menu-movil{display:none;background:none;border:none;font-size:1.8rem;color:var(--marron);cursor:pointer}
 
-/* === RESPONSIVE === */
+/* === RESPONSIVE — TABLETS === */
+@media screen and (max-width:1024px){
+    .product-grid{grid-template-columns:repeat(2,1fr);gap:20px}
+    .features{padding:60px 5%}
+    .products{padding:60px 5%}
+}
+
+/* === RESPONSIVE — MÓVILES === */
 @media screen and (max-width:768px){
-    .navbar{flex-wrap:wrap;padding:12px 5%}
-    .logo img{height:45px;margin-right:0}
-    .btn-menu-movil{display:block;order:3}
+    /* --- NAVBAR --- */
+    .navbar{flex-wrap:wrap;padding:10px 4%}
+    .logo img{height:42px;margin-right:0}
+    .btn-menu-movil{display:block;order:3;font-size:1.6rem;padding:4px 8px}
     .header-actions{order:2;margin:0 auto}
-    #btn-carrito{padding:8px 14px;font-size:.8rem}
-    #menu-links{display:none;width:100%;order:4;margin-top:12px;text-align:center}
+    #btn-carrito{padding:8px 14px;font-size:.78rem}
+    #menu-links{display:none;width:100%;order:4;margin-top:10px;text-align:center}
     #menu-links.menu-activo{display:block}
-    .navbar ul{flex-direction:column;gap:12px;padding-bottom:12px;border-bottom:1px solid rgba(0,0,0,0.08)}
-    .navbar ul li a{margin:0;font-size:.88rem}
+    .navbar ul{flex-direction:column;gap:8px;padding-bottom:12px;border-bottom:1px solid rgba(0,0,0,0.08)}
+    .navbar ul li a{margin:0;font-size:.85rem;padding:10px 16px}
     .navbar ul li a::after{display:none}
     .dropdown-menu{position:static;transform:none;min-width:100%;box-shadow:none;border:none;border-radius:8px;background:rgba(0,0,0,0.03);margin-top:6px;max-height:0;overflow:hidden;padding:0;opacity:0;visibility:hidden;pointer-events:none;transition:max-height 0.35s ease,padding 0.35s ease,opacity 0.3s ease}
     .nav-dropdown:hover .dropdown-menu{opacity:0;visibility:hidden;pointer-events:none;max-height:0}
     .nav-dropdown.open .dropdown-menu{max-height:200px;padding:6px 0;opacity:1;visibility:visible;pointer-events:all}
-    .dropdown-menu li a{justify-content:center;padding:8px 16px;font-size:.85rem;border-left:none}
+    .dropdown-menu li a{justify-content:center;padding:10px 16px;font-size:.85rem;border-left:none}
     .dropdown-menu li+li{border-top:none}
-    .hero{height:80vh;background-attachment:scroll}
-    .hero h1,.ritual{font-size:2rem}
-    .hero-description{font-size:.95rem;margin-bottom:24px}
-    .features{flex-direction:column;align-items:center;padding:50px 5%;gap:20px}
-    .feature-item{max-width:100%;margin-bottom:0}
-    .product-grid{grid-template-columns:1fr}
-    .banner-frase{padding:60px 5%}
-    .banner-frase blockquote{font-size:1.3rem}
-    .curado-main-title { font-size: 1.7rem !important; }
-    .curado-steps-title { font-size: 1.4rem !important; }
-    .curado-steps-list li { padding: 14px 18px !important; }
-    .footer-content{grid-template-columns:1fr;text-align:center;gap:24px}
-    .footer-social p,.footer-social a{justify-content:center}
-    #modal-carrito{width:100%;left:0;right:0;top:auto;bottom:0;border-radius:20px 20px 0 0;padding:28px 20px 36px}
+
+    /* --- HERO --- */
+    .hero{height:75vh;background-attachment:scroll}
+    .hero-content{padding:0 16px}
+    .hero h1,.ritual{font-size:1.7rem;margin:16px 0}
+    .hero-description{font-size:.88rem;margin-bottom:20px}
+    .badge{padding:6px 16px;font-size:.65rem;letter-spacing:1.5px}
+    .hero-cta{padding:13px 30px;font-size:.9rem}
+    .scroll-indicator{display:none}
+
+    /* --- FEATURES --- */
+    .features{flex-direction:row;flex-wrap:wrap;align-items:stretch;padding:40px 4%;gap:12px}
+    .feature-item{
+        flex:1 1 calc(50% - 6px);min-width:0;max-width:100%;
+        padding:20px 14px;border-radius:12px;
+    }
+    .feature-item:last-child{flex:1 1 100%}
+    .icon{width:50px;height:50px;font-size:1.6rem;margin-bottom:12px}
+    .feature-item h3{font-size:.88rem;margin-bottom:4px}
+    .feature-item p{font-size:.78rem;line-height:1.4}
+
+    /* --- CATÁLOGO — GRILLA 2 COLUMNAS --- */
+    .products{padding:40px 4%}
+    .section-title{font-size:1.6rem;margin-bottom:10px}
+    .section-title::after{width:40px;height:2px;margin-top:8px}
+    .search-container{margin:16px 0 24px}
+    #buscador-productos{padding:11px 14px 11px 40px;font-size:.88rem}
+    .search-icon{left:14px;font-size:.95rem}
+
+    .catalog-category{margin-top:24px}
+    .category-icon{width:40px;height:40px;font-size:1.5rem;border-radius:10px}
+    .category-title{font-size:1rem;letter-spacing:1px}
+    .category-header{gap:10px}
+
+    .product-grid{grid-template-columns:repeat(2,1fr);gap:10px;margin-top:16px}
+    .product-card{border-radius:12px}
+    .product-card:hover{transform:none;box-shadow:0 4px 20px var(--sombra)}
+    .product-img{height:140px}
+    .product-info{padding:10px 8px 12px}
+    .product-info h4{font-size:.75rem;margin-bottom:3px;line-height:1.3}
+    .price{font-size:1rem;font-weight:800;margin:4px 0;padding:2px 10px;border-radius:6px}
+    .btn-add{padding:8px 10px;font-size:.75rem;border-radius:8px}
+    .color-selector{margin:4px 0 2px;gap:6px}
+    .color-swatch{width:22px;height:22px}
+    .color-swatch::after{font-size:.6rem;padding:3px 6px}
+
+    /* --- BANNER FRASE --- */
+    .banner-frase{padding:50px 5%}
+    .banner-frase blockquote{font-size:1.15rem;line-height:1.5}
+    .banner-frase .autor{font-size:.75rem;margin-top:14px}
+    .banner-frase::before{font-size:8rem}
+
+    /* --- CURADO --- */
+    .curado-section{padding:50px 5%}
+    .curado-vertical-layout{gap:28px}
+    .curado-media{max-width:100%}
+    .curado-infographic{border-radius:12px;border-width:2px}
+    .curado-main-title{font-size:1.5rem !important;line-height:1.3}
+    .curado-intro{font-size:1rem;margin-bottom:20px}
+    .curado-divider{margin:16px auto 20px}
+    .curado-subtitle-now{font-size:1.05rem}
+    .curado-steps-title{font-size:1.3rem !important;margin-bottom:20px}
+    .curado-steps-list{gap:12px;margin-bottom:28px}
+    .curado-steps-list li{padding:12px 14px !important;border-radius:10px;gap:10px}
+    .step-num{font-size:1rem}
+    .curado-steps-list p{font-size:.88rem;line-height:1.45}
+    .curado-recommendation{padding:12px 18px;border-radius:10px}
+    .curado-recommendation p{font-size:.92rem}
+    .curado-enjoy-text{font-size:1.3rem}
+
+    /* --- FAQ --- */
+    .faq-section{padding:50px 4%}
+    .faq-container{gap:12px;margin-top:24px}
+    .faq-item{border-radius:12px}
+    .faq-question{padding:16px 16px;font-size:.9rem;gap:10px}
+    .faq-icon{width:24px;height:24px;font-size:.85rem}
+    .faq-answer p{padding:0 16px 16px;font-size:.85rem;line-height:1.55}
+
+    /* --- FOOTER --- */
+    footer{padding:40px 5% 16px}
+    .footer-content{grid-template-columns:1fr;text-align:center;gap:20px;padding-bottom:20px;margin-bottom:16px}
+    .footer-brand h3{font-size:1.25rem}
+    .footer-brand p{font-size:.82rem}
+    .footer-links h4,.footer-social h4{font-size:.78rem;margin-bottom:10px}
+    .footer-links ul li a{font-size:.82rem}
+    .footer-social p,.footer-social a{justify-content:center;font-size:.85rem}
+    .footer-copy{font-size:.72rem}
+
+    /* --- CARRITO (Bottom Sheet) --- */
+    #modal-carrito{width:100%;left:0;right:0;top:auto;bottom:0;border-radius:20px 20px 0 0;padding:24px 16px 32px;max-height:70vh;overflow-y:auto}
+    .item-carrito{font-size:.82rem;padding:6px 0}
+    .carrito-total{font-size:1rem}
+
+    /* --- FORMULARIO --- */
+    #modal-formulario{width:92%;padding:28px 20px}
+    .form-grupo label{font-size:.82rem}
+    .form-grupo input{padding:10px 14px;font-size:.92rem}
+
+    /* --- WHATSAPP --- */
     .whatsapp-flotante{width:48px!important;height:48px!important;bottom:16px;right:16px}
     .whatsapp-flotante svg{width:24px!important;height:24px!important}
-    .scroll-indicator{display:none}
+
+    /* --- LIGHTBOX --- */
+    #lightbox-container{width:92%;max-width:none;border-radius:12px}
+    .lightbox-cerrar{top:12px;right:16px;font-size:32px}
+    .lightbox-btn{width:40px;height:40px;font-size:1.2rem}
+    #lightbox-prev{left:10px}
+    #lightbox-next{right:10px}
+
+    /* --- TOAST --- */
+    #toast-stock{padding:12px 24px;font-size:.85rem;border-radius:30px}
+}
+
+/* === RESPONSIVE — PANTALLAS MUY CHICAS (≤ 380px) === */
+@media screen and (max-width:380px){
+    .hero h1,.ritual{font-size:1.45rem}
+    .hero-description{font-size:.82rem}
+    .badge{padding:5px 12px;font-size:.6rem}
+    .hero-cta{padding:11px 24px;font-size:.82rem}
+    .product-img{height:120px}
+    .product-info{padding:8px 6px 10px}
+    .product-info h4{font-size:.68rem}
+    .price{font-size:.88rem;padding:2px 8px}
+    .btn-add{padding:7px 8px;font-size:.7rem}
+    .feature-item{padding:16px 10px}
+    .feature-item h3{font-size:.82rem}
+    .feature-item p{font-size:.72rem}
+    .faq-question{padding:14px 12px;font-size:.82rem}
+    .faq-answer p{padding:0 12px 14px;font-size:.8rem}
+    .curado-main-title{font-size:1.3rem !important}
+    .curado-steps-title{font-size:1.15rem !important}
+    .curado-steps-list li{padding:10px 12px !important}
+    .curado-steps-list p{font-size:.82rem}
 }
 
 /* === LIGHTBOX MODAL === */
