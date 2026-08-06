@@ -190,6 +190,17 @@ body{font-family:'Montserrat',sans-serif;background:var(--crema);color:var(--osc
     border-radius:2px;
 }
 
+/* Scroll margin for sticky navbar */
+.catalog-category{
+    scroll-margin-top:90px;
+}
+
+/* Subcategory subtle accent */
+.catalog-category.subcategory .category-header{
+    padding-left:12px;
+    border-left:3px solid var(--dorado);
+}
+
 .product-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin-top:40px}
 .product-card{
     background:var(--blanco);border-radius:var(--radius);overflow:hidden;

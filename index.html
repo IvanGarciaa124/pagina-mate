@@ -24,8 +24,12 @@
                 <li class="nav-dropdown">
                     <a href="javascript:void(0)" class="dropdown-toggle">Catálogo <span class="dropdown-arrow">▾</span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#cat-yerbas" onclick="cerrarDropdown()">Yerbas</a></li>
-                        <li><a href="#cat-equipamiento" onclick="cerrarDropdown()">Equipamiento</a></li>
+                        <li><a href="#cat-yerbas" onclick="cerrarDropdown()">🌿 Yerbas</a></li>
+                        <li><a href="#cat-mates" onclick="cerrarDropdown()">🧉 Mates</a></li>
+                        <li><a href="#cat-termos" onclick="cerrarDropdown()">🫗 Termos</a></li>
+                        <li><a href="#cat-bombillas" onclick="cerrarDropdown()">🥄 Bombillas</a></li>
+                        <li><a href="#cat-yerbera" onclick="cerrarDropdown()">📦 Yerbera</a></li>
+                        <li><a href="#cat-canastas" onclick="cerrarDropdown()">🧺 Canastas</a></li>
                     </ul>
                 </li>
                 <li><a href="#curado">Curado</a></li>
@@ -196,105 +200,35 @@
             </article>
         </div>
 
-        <!-- ====== SECCIÓN: EQUIPAMIENTO ====== -->
-        <div id="cat-equipamiento" class="catalog-category animate-on-scroll" style="margin-top: 60px;">
+        <!-- ====== SECCIÓN: MATES ====== -->
+        <div id="cat-mates" class="catalog-category animate-on-scroll" style="margin-top: 60px;">
             <div class="category-header">
                 <span class="category-icon">🧉</span>
-                <h3 class="category-title">Equipamiento</h3>
+                <h3 class="category-title">Mates</h3>
                 <div class="category-line"></div>
             </div>
         </div>
 
         <div class="product-grid">
-            <!-- stock-6: Termo Plateado 1L P/M -->
-            <article class="product-card animate-on-scroll">
+            <!-- stock-15 / stock-17: Mate Imperial Croco Alpaca (Negro / Marrón c/ Patitas) -->
+            <article class="product-card animate-on-scroll" id="card-imperial-croco">
                 <div class="product-img">
-                    <img src="termo1.jpg" data-images='["termo1.jpg", "termo2.jpg", "termo3.jpg"]' alt="Termo Plateado 1L P/M"
+                    <img id="img-imperial-croco" src="Mate Imperial Croco alpaca negro.jpeg" alt="Mate Imperial Croco Alpaca"
                          style="transform: scale(1); transform-origin: center center;" onclick="abrirLightbox(this)">
                 </div>
                 <div class="product-info">
-                    <h4>Termo Plateado 1L P/M</h4>
-                    <span class="price" id="precio-6">$0</span>
-                    <p class="stock-info">Stock: <span id="stock-6">0</span></p>
-                    <button class="btn-add" onclick="agregarAlCarrito('Termo Plateado 1L P/M', 0, 'stock-6')">Agregar</button>
-                </div>
-            </article>
-
-            <!-- stock-7 / stock-8: Termo Flow Yelton 1L P/B (Negro / Blanco) -->
-            <article class="product-card animate-on-scroll" id="card-termo-flow">
-                <div class="product-img">
-                    <img id="img-termo-flow" src="Termo Flow 1000 ml Yelton Negro.jfif" alt="Termo Flow Yelton 1L P/B"
-                         style="transform: scale(1); transform-origin: center center;" onclick="abrirLightbox(this)">
-                </div>
-                <div class="product-info">
-                    <h4>Termo Flow Yelton 1L P/B</h4>
+                    <h4>Mate Imperial Croco Alpaca</h4>
                     <div class="color-selector">
                         <button class="color-swatch active" style="background: #1a1a2e;" title="Negro"
-                            onclick="cambiarVariante('termo-flow', 'Termo Flow 1000 ml Yelton Negro.jfif', 'Termo Flow Yelton Negro 1L P/B', 'stock-7', this)"></button>
-                        <button class="color-swatch" style="background: #f5f5f0;" title="Blanco"
-                            onclick="cambiarVariante('termo-flow', 'Termo Flow 1000 ml Yelton Blanco.jfif', 'Termo Flow Yelton Blanco 1L P/B', 'stock-8', this)"></button>
+                            onclick="cambiarVariante('imperial-croco', 'Mate Imperial Croco alpaca negro.jpeg', 'Mate Imperial Croco Alpaca Negro', 'stock-15', this)"></button>
+                        <button class="color-swatch" style="background: #8B5E3C;" title="Marrón c/ Patitas"
+                            onclick="cambiarVariante('imperial-croco', 'Mate Imperial Croco alpaca marron con patitas.jpeg', 'Mate Imperial Croco Alpaca Marrón c/ Patitas', 'stock-17', this)"></button>
                     </div>
-                    <span class="price" id="precio-7">$0</span>
-                    <p class="stock-info">Stock: <span id="stock-7">0</span></p>
-                    <span class="price" id="precio-8" style="display:none;">$0</span>
-                    <p class="stock-info" style="display:none;">Stock: <span id="stock-8">0</span></p>
-                    <button class="btn-add" id="btn-termo-flow" onclick="agregarAlCarrito('Termo Flow Yelton Negro 1L P/B', 0, 'stock-7')">Agregar</button>
-                </div>
-            </article>
-
-            <!-- stock-9: Bombilla Pico de Loro CORTA -->
-            <article class="product-card animate-on-scroll">
-                <div class="product-img">
-                    <img src="pico de loro 16cm.webp" alt="Bombilla Pico de Loro CORTA"
-                         style="transform: scale(1); transform-origin: center center;" onclick="abrirLightbox(this)">
-                </div>
-                <div class="product-info">
-                    <h4>Bombilla Pico de Loro CORTA</h4>
-                    <span class="price" id="precio-9">$0</span>
-                    <p class="stock-info">Stock: <span id="stock-9">0</span></p>
-                    <button class="btn-add" onclick="agregarAlCarrito('Bombilla Pico de Loro CORTA', 0, 'stock-9')">Agregar</button>
-                </div>
-            </article>
-
-            <!-- stock-10: Bombilla Pico de Loro LARGA -->
-            <article class="product-card animate-on-scroll">
-                <div class="product-img">
-                    <img src="pico d loro 18cm.jpeg" alt="Bombilla Pico de Loro LARGA"
-                         style="transform: scale(1); transform-origin: center center;" onclick="abrirLightbox(this)">
-                </div>
-                <div class="product-info">
-                    <h4>Bombilla Pico de Loro LARGA</h4>
-                    <span class="price" id="precio-10">$0</span>
-                    <p class="stock-info">Stock: <span id="stock-10">0</span></p>
-                    <button class="btn-add" onclick="agregarAlCarrito('Bombilla Pico de Loro LARGA', 0, 'stock-10')">Agregar</button>
-                </div>
-            </article>
-
-            <!-- stock-11: Bombilla Pico de Loro Alpaca -->
-            <article class="product-card animate-on-scroll">
-                <div class="product-img">
-                    <img src="Bombilla Pico de Loro Clasica Alpaca" data-images='["Bombilla Pico de Loro Clasica Alpaca", "Bombilla Pico de Loro Clasica Alpaca1", "Bombilla Pico de Loro Clasica Alpaca3"]' alt="Bombilla Pico de Loro Alpaca"
-                         style="transform: scale(1); transform-origin: center center;" onclick="abrirLightbox(this)">
-                </div>
-                <div class="product-info">
-                    <h4>Bombilla Pico de Loro Alpaca</h4>
-                    <span class="price" id="precio-11">$0</span>
-                    <p class="stock-info">Stock: <span id="stock-11">0</span></p>
-                    <button class="btn-add" onclick="agregarAlCarrito('Bombilla Pico de Loro Alpaca', 0, 'stock-11')">Agregar</button>
-                </div>
-            </article>
-
-            <!-- stock-12: Bombillon Cincelado -->
-            <article class="product-card animate-on-scroll">
-                <div class="product-img">
-                    <img src="bombillon cincelado.jfif" alt="Bombillón Cincelado"
-                         style="transform: scale(1); transform-origin: center center;" onclick="abrirLightbox(this)">
-                </div>
-                <div class="product-info">
-                    <h4>Bombillón Cincelado</h4>
-                    <span class="price" id="precio-12">$0</span>
-                    <p class="stock-info">Stock: <span id="stock-12">0</span></p>
-                    <button class="btn-add" onclick="agregarAlCarrito('Bombillón Cincelado', 0, 'stock-12')">Agregar</button>
+                    <span class="price" id="precio-15">$0</span>
+                    <p class="stock-info">Stock: <span id="stock-15">0</span></p>
+                    <span class="price" id="precio-17" style="display:none;">$0</span>
+                    <p class="stock-info" style="display:none;">Stock: <span id="stock-17">0</span></p>
+                    <button class="btn-add" id="btn-imperial-croco" onclick="agregarAlCarrito('Mate Imperial Croco Alpaca Negro', 0, 'stock-15')">Agregar</button>
                 </div>
             </article>
 
@@ -317,28 +251,6 @@
                     <span class="price" id="precio-14" style="display:none;">$0</span>
                     <p class="stock-info" style="display:none;">Stock: <span id="stock-14">0</span></p>
                     <button class="btn-add" id="btn-imperial-calabaza" onclick="agregarAlCarrito('Mate Imperial Calabaza Negro', 0, 'stock-13')">Agregar</button>
-                </div>
-            </article>
-
-            <!-- stock-15 / stock-17: Mate Imperial Croco Alpaca (Negro / Marrón c/ Patitas) -->
-            <article class="product-card animate-on-scroll" id="card-imperial-croco">
-                <div class="product-img">
-                    <img id="img-imperial-croco" src="Mate Imperial Croco alpaca negro.jpeg" alt="Mate Imperial Croco Alpaca"
-                         style="transform: scale(1); transform-origin: center center;" onclick="abrirLightbox(this)">
-                </div>
-                <div class="product-info">
-                    <h4>Mate Imperial Croco Alpaca</h4>
-                    <div class="color-selector">
-                        <button class="color-swatch active" style="background: #1a1a2e;" title="Negro"
-                            onclick="cambiarVariante('imperial-croco', 'Mate Imperial Croco alpaca negro.jpeg', 'Mate Imperial Croco Alpaca Negro', 'stock-15', this)"></button>
-                        <button class="color-swatch" style="background: #8B5E3C;" title="Marrón c/ Patitas"
-                            onclick="cambiarVariante('imperial-croco', 'Mate Imperial Croco alpaca marron con patitas.jpeg', 'Mate Imperial Croco Alpaca Marrón c/ Patitas', 'stock-17', this)"></button>
-                    </div>
-                    <span class="price" id="precio-15">$0</span>
-                    <p class="stock-info">Stock: <span id="stock-15">0</span></p>
-                    <span class="price" id="precio-17" style="display:none;">$0</span>
-                    <p class="stock-info" style="display:none;">Stock: <span id="stock-17">0</span></p>
-                    <button class="btn-add" id="btn-imperial-croco" onclick="agregarAlCarrito('Mate Imperial Croco Alpaca Negro', 0, 'stock-15')">Agregar</button>
                 </div>
             </article>
 
@@ -532,6 +444,276 @@
                 </div>
             </article>
 
+            <!-- NUEVO: Mate Imperial Alpaca Lisa Equipos (River / San Lorenzo) -->
+            <article class="product-card animate-on-scroll" id="card-imperial-equipos">
+                <div class="product-img">
+                    <img id="img-imperial-equipos" src="mate imperial alpaca liso equipos river.png" alt="Mate Imperial Alpaca Lisa Equipos"
+                         style="transform: scale(1); transform-origin: center center;" onclick="abrirLightbox(this)">
+                </div>
+                <div class="product-info">
+                    <h4>Mate Imperial Alpaca Lisa Equipos</h4>
+                    <div class="color-selector">
+                        <button class="color-swatch active" style="background: linear-gradient(135deg, #c0392b, #fff, #c0392b);" title="River"
+                            onclick="cambiarVariante('imperial-equipos', 'mate imperial alpaca liso equipos river.png', 'Mate Imperial Alpaca Lisa River', 'stock-33', this)"></button>
+                        <button class="color-swatch" style="background: linear-gradient(135deg, #e74c3c, #2c3e50);" title="San Lorenzo"
+                            onclick="cambiarVariante('imperial-equipos', 'mate imperial alpaca liso equipos sanlo.png', 'Mate Imperial Alpaca Lisa San Lorenzo', 'stock-34', this)"></button>
+                    </div>
+                    <span class="price" id="precio-33">$0</span>
+                    <p class="stock-info">Stock: <span id="stock-33">0</span></p>
+                    <span class="price" id="precio-34" style="display:none;">$0</span>
+                    <p class="stock-info" style="display:none;">Stock: <span id="stock-34">0</span></p>
+                    <button class="btn-add" id="btn-imperial-equipos" onclick="agregarAlCarrito('Mate Imperial Alpaca Lisa River', 0, 'stock-33')">Agregar</button>
+                </div>
+            </article>
+
+            <!-- NUEVO: Mate Imperial Alpaca Liso -->
+            <article class="product-card animate-on-scroll">
+                <div class="product-img">
+                    <img src="mate imperial alpaca liso.png" alt="Mate Imperial Alpaca Liso"
+                         style="transform: scale(1); transform-origin: center center;" onclick="abrirLightbox(this)">
+                </div>
+                <div class="product-info">
+                    <h4>Mate Imperial Alpaca Liso</h4>
+                    <span class="price" id="precio-35">$0</span>
+                    <p class="stock-info">Stock: <span id="stock-35">0</span></p>
+                    <button class="btn-add" onclick="agregarAlCarrito('Mate Imperial Alpaca Liso', 0, 'stock-35')">Agregar</button>
+                </div>
+            </article>
+
+            <!-- NUEVO: Mate Imperial Calabaza Alpaca Cincelada Lacre -->
+            <article class="product-card animate-on-scroll">
+                <div class="product-img">
+                    <img src="mate imperial calabaza alpaca cincelada lacre.jpeg" data-images='["mate imperial calabaza alpaca cincelada lacre.jpeg", "mate imperial calabaza alpaca cincelada lacre2.jpeg", "mate imperial calabaza alpaca cincelada lacre3.jpeg"]' alt="Mate Imperial Calabaza Alpaca Cincelada Lacre"
+                         style="transform: scale(1); transform-origin: center center;" onclick="abrirLightbox(this)">
+                </div>
+                <div class="product-info">
+                    <h4>Mate Imperial Calabaza Alpaca Cincelada Lacre</h4>
+                    <span class="price" id="precio-36">$0</span>
+                    <p class="stock-info">Stock: <span id="stock-36">0</span></p>
+                    <button class="btn-add" onclick="agregarAlCarrito('Mate Imperial Calabaza Alpaca Cincelada Lacre', 0, 'stock-36')">Agregar</button>
+                </div>
+            </article>
+
+            <!-- NUEVO: Mate Galleta -->
+            <article class="product-card animate-on-scroll">
+                <div class="product-img">
+                    <img src="mate galleta.webp" alt="Mate Galleta"
+                         style="transform: scale(1); transform-origin: center center;" onclick="abrirLightbox(this)">
+                </div>
+                <div class="product-info">
+                    <h4>Mate Galleta</h4>
+                    <span class="price" id="precio-37">$0</span>
+                    <p class="stock-info">Stock: <span id="stock-37">0</span></p>
+                    <button class="btn-add" onclick="agregarAlCarrito('Mate Galleta', 0, 'stock-37')">Agregar</button>
+                </div>
+            </article>
+        </div>
+
+        <!-- ====== SECCIÓN: TERMOS ====== -->
+        <div id="cat-termos" class="catalog-category subcategory animate-on-scroll" style="margin-top: 60px;">
+            <div class="category-header">
+                <span class="category-icon">🫗</span>
+                <h3 class="category-title">Termos</h3>
+                <div class="category-line"></div>
+            </div>
+        </div>
+
+        <div class="product-grid">
+            <!-- stock-6: Termo Plateado 1L P/M -->
+            <article class="product-card animate-on-scroll">
+                <div class="product-img">
+                    <img src="termo1.jpg" data-images='["termo1.jpg", "termo2.jpg", "termo3.jpg"]' alt="Termo Plateado 1L P/M"
+                         style="transform: scale(1); transform-origin: center center;" onclick="abrirLightbox(this)">
+                </div>
+                <div class="product-info">
+                    <h4>Termo Plateado 1L P/M</h4>
+                    <span class="price" id="precio-6">$0</span>
+                    <p class="stock-info">Stock: <span id="stock-6">0</span></p>
+                    <button class="btn-add" onclick="agregarAlCarrito('Termo Plateado 1L P/M', 0, 'stock-6')">Agregar</button>
+                </div>
+            </article>
+
+            <!-- stock-7 / stock-8: Termo Flow Yelton 1L P/B (Negro / Blanco) -->
+            <article class="product-card animate-on-scroll" id="card-termo-flow">
+                <div class="product-img">
+                    <img id="img-termo-flow" src="Termo Flow 1000 ml Yelton Negro.jfif" alt="Termo Flow Yelton 1L P/B"
+                         style="transform: scale(1); transform-origin: center center;" onclick="abrirLightbox(this)">
+                </div>
+                <div class="product-info">
+                    <h4>Termo Flow Yelton 1L P/B</h4>
+                    <div class="color-selector">
+                        <button class="color-swatch active" style="background: #1a1a2e;" title="Negro"
+                            onclick="cambiarVariante('termo-flow', 'Termo Flow 1000 ml Yelton Negro.jfif', 'Termo Flow Yelton Negro 1L P/B', 'stock-7', this)"></button>
+                        <button class="color-swatch" style="background: #f5f5f0;" title="Blanco"
+                            onclick="cambiarVariante('termo-flow', 'Termo Flow 1000 ml Yelton Blanco.jfif', 'Termo Flow Yelton Blanco 1L P/B', 'stock-8', this)"></button>
+                    </div>
+                    <span class="price" id="precio-7">$0</span>
+                    <p class="stock-info">Stock: <span id="stock-7">0</span></p>
+                    <span class="price" id="precio-8" style="display:none;">$0</span>
+                    <p class="stock-info" style="display:none;">Stock: <span id="stock-8">0</span></p>
+                    <button class="btn-add" id="btn-termo-flow" onclick="agregarAlCarrito('Termo Flow Yelton Negro 1L P/B', 0, 'stock-7')">Agregar</button>
+                </div>
+            </article>
+        </div>
+
+        <!-- ====== SECCIÓN: BOMBILLAS ====== -->
+        <div id="cat-bombillas" class="catalog-category subcategory animate-on-scroll" style="margin-top: 60px;">
+            <div class="category-header">
+                <span class="category-icon">🥄</span>
+                <h3 class="category-title">Bombillas</h3>
+                <div class="category-line"></div>
+            </div>
+        </div>
+
+        <div class="product-grid">
+            <!-- stock-9: Bombilla Pico de Loro CORTA -->
+            <article class="product-card animate-on-scroll">
+                <div class="product-img">
+                    <img src="pico de loro 16cm.webp" alt="Bombilla Pico de Loro CORTA"
+                         style="transform: scale(1); transform-origin: center center;" onclick="abrirLightbox(this)">
+                </div>
+                <div class="product-info">
+                    <h4>Bombilla Pico de Loro CORTA</h4>
+                    <span class="price" id="precio-9">$0</span>
+                    <p class="stock-info">Stock: <span id="stock-9">0</span></p>
+                    <button class="btn-add" onclick="agregarAlCarrito('Bombilla Pico de Loro CORTA', 0, 'stock-9')">Agregar</button>
+                </div>
+            </article>
+
+            <!-- stock-10: Bombilla Pico de Loro LARGA -->
+            <article class="product-card animate-on-scroll">
+                <div class="product-img">
+                    <img src="pico d loro 18cm.jpeg" alt="Bombilla Pico de Loro LARGA"
+                         style="transform: scale(1); transform-origin: center center;" onclick="abrirLightbox(this)">
+                </div>
+                <div class="product-info">
+                    <h4>Bombilla Pico de Loro LARGA</h4>
+                    <span class="price" id="precio-10">$0</span>
+                    <p class="stock-info">Stock: <span id="stock-10">0</span></p>
+                    <button class="btn-add" onclick="agregarAlCarrito('Bombilla Pico de Loro LARGA', 0, 'stock-10')">Agregar</button>
+                </div>
+            </article>
+
+            <!-- stock-11: Bombilla Pico de Loro Alpaca -->
+            <article class="product-card animate-on-scroll">
+                <div class="product-img">
+                    <img src="Bombilla Pico de Loro Clasica Alpaca" data-images='["Bombilla Pico de Loro Clasica Alpaca", "Bombilla Pico de Loro Clasica Alpaca1", "Bombilla Pico de Loro Clasica Alpaca3"]' alt="Bombilla Pico de Loro Alpaca"
+                         style="transform: scale(1); transform-origin: center center;" onclick="abrirLightbox(this)">
+                </div>
+                <div class="product-info">
+                    <h4>Bombilla Pico de Loro Alpaca</h4>
+                    <span class="price" id="precio-11">$0</span>
+                    <p class="stock-info">Stock: <span id="stock-11">0</span></p>
+                    <button class="btn-add" onclick="agregarAlCarrito('Bombilla Pico de Loro Alpaca', 0, 'stock-11')">Agregar</button>
+                </div>
+            </article>
+
+            <!-- stock-12: Bombillón Cincelado -->
+            <article class="product-card animate-on-scroll">
+                <div class="product-img">
+                    <img src="bombillon cincelado.jfif" alt="Bombillón Cincelado"
+                         style="transform: scale(1); transform-origin: center center;" onclick="abrirLightbox(this)">
+                </div>
+                <div class="product-info">
+                    <h4>Bombillón Cincelado</h4>
+                    <span class="price" id="precio-12">$0</span>
+                    <p class="stock-info">Stock: <span id="stock-12">0</span></p>
+                    <button class="btn-add" onclick="agregarAlCarrito('Bombillón Cincelado', 0, 'stock-12')">Agregar</button>
+                </div>
+            </article>
+
+            <!-- NUEVO: Bombilla Fina Paleta -->
+            <article class="product-card animate-on-scroll">
+                <div class="product-img">
+                    <img src="bombilla fina paleta.png" alt="Bombilla Fina Paleta"
+                         style="transform: scale(1); transform-origin: center center;" onclick="abrirLightbox(this)">
+                </div>
+                <div class="product-info">
+                    <h4>Bombilla Fina Paleta</h4>
+                    <span class="price" id="precio-38">$0</span>
+                    <p class="stock-info">Stock: <span id="stock-38">0</span></p>
+                    <button class="btn-add" onclick="agregarAlCarrito('Bombilla Fina Paleta', 0, 'stock-38')">Agregar</button>
+                </div>
+            </article>
+
+            <!-- NUEVO: Bombillón Cincelado Alpaca 2 Anillos -->
+            <article class="product-card animate-on-scroll">
+                <div class="product-img">
+                    <img src="Bombillon cincelado alpaca 2 anillos.jpeg" data-images='["Bombillon cincelado alpaca 2 anillos.jpeg", "Bombillon cincelado alpaca 2 anillos1.jpeg", "Bombillon cincelado alpaca 2 anillos2.jpeg", "Bombillon cincelado alpaca 2 anillos3.jpeg"]' alt="Bombillón Cincelado Alpaca 2 Anillos"
+                         style="transform: scale(1); transform-origin: center center;" onclick="abrirLightbox(this)">
+                </div>
+                <div class="product-info">
+                    <h4>Bombillón Cincelado Alpaca 2 Anillos</h4>
+                    <span class="price" id="precio-39">$0</span>
+                    <p class="stock-info">Stock: <span id="stock-39">0</span></p>
+                    <button class="btn-add" onclick="agregarAlCarrito('Bombillón Cincelado Alpaca 2 Anillos', 0, 'stock-39')">Agregar</button>
+                </div>
+            </article>
+
+            <!-- NUEVO: Bombilla Pico de Loro (genérica) -->
+            <article class="product-card animate-on-scroll">
+                <div class="product-img">
+                    <img src="bombilla pico e loro.png" alt="Bombilla Pico de Loro"
+                         style="transform: scale(1); transform-origin: center center;" onclick="abrirLightbox(this)">
+                </div>
+                <div class="product-info">
+                    <h4>Bombilla Pico de Loro</h4>
+                    <span class="price" id="precio-40">$0</span>
+                    <p class="stock-info">Stock: <span id="stock-40">0</span></p>
+                    <button class="btn-add" onclick="agregarAlCarrito('Bombilla Pico de Loro', 0, 'stock-40')">Agregar</button>
+                </div>
+            </article>
+        </div>
+
+        <!-- ====== SECCIÓN: YERBERA ====== -->
+        <div id="cat-yerbera" class="catalog-category subcategory animate-on-scroll" style="margin-top: 60px;">
+            <div class="category-header">
+                <span class="category-icon">📦</span>
+                <h3 class="category-title">Yerbera</h3>
+                <div class="category-line"></div>
+            </div>
+        </div>
+
+        <div class="product-grid">
+            <!-- NUEVO: Yerbera y Azucarera Yelton -->
+            <article class="product-card animate-on-scroll">
+                <div class="product-img">
+                    <img src="yerbera y azucarera yelton.png" data-images='["yerbera y azucarera yelton.png", "yerbera y azucarera yelton2.png"]' alt="Yerbera y Azucarera Yelton"
+                         style="transform: scale(1); transform-origin: center center;" onclick="abrirLightbox(this)">
+                </div>
+                <div class="product-info">
+                    <h4>Yerbera y Azucarera Yelton</h4>
+                    <span class="price" id="precio-41">$0</span>
+                    <p class="stock-info">Stock: <span id="stock-41">0</span></p>
+                    <button class="btn-add" onclick="agregarAlCarrito('Yerbera y Azucarera Yelton', 0, 'stock-41')">Agregar</button>
+                </div>
+            </article>
+
+            <!-- NUEVO: Yerbera y Azucarera -->
+            <article class="product-card animate-on-scroll">
+                <div class="product-img">
+                    <img src="yerbera y azucarera.png" alt="Yerbera y Azucarera"
+                         style="transform: scale(1); transform-origin: center center;" onclick="abrirLightbox(this)">
+                </div>
+                <div class="product-info">
+                    <h4>Yerbera y Azucarera</h4>
+                    <span class="price" id="precio-42">$0</span>
+                    <p class="stock-info">Stock: <span id="stock-42">0</span></p>
+                    <button class="btn-add" onclick="agregarAlCarrito('Yerbera y Azucarera', 0, 'stock-42')">Agregar</button>
+                </div>
+            </article>
+        </div>
+
+        <!-- ====== SECCIÓN: CANASTAS ====== -->
+        <div id="cat-canastas" class="catalog-category subcategory animate-on-scroll" style="margin-top: 60px;">
+            <div class="category-header">
+                <span class="category-icon">🧺</span>
+                <h3 class="category-title">Canastas</h3>
+                <div class="category-line"></div>
+            </div>
+        </div>
+
+        <div class="product-grid">
             <!-- stock-30: Canasta Cuero Pelota Negra -->
             <article class="product-card animate-on-scroll">
                 <div class="product-img">

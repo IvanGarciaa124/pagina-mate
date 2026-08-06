@@ -232,7 +232,11 @@ function filtrarProductos() {
     }
 
     filtrarCategoria('cat-yerbas');
-    filtrarCategoria('cat-equipamiento');
+    filtrarCategoria('cat-mates');
+    filtrarCategoria('cat-termos');
+    filtrarCategoria('cat-bombillas');
+    filtrarCategoria('cat-yerbera');
+    filtrarCategoria('cat-canastas');
 }
 
 // --- 9. CONEXIÓN DIRECTA CON GOOGLE SHEETS (SIN LÍMITES) ---
