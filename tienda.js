@@ -240,7 +240,7 @@ function filtrarProductos() {
 }
 
 // --- 9. CONEXIÓN DIRECTA CON GOOGLE SHEETS (SIN LÍMITES) ---
-const LINK_CSV = "https://docs.google.com/spreadsheets/d/e/2PACX-1vT4hUnxOnSWRy5zB8-N8CoUbiajbB2eqvFXXMLrgxx-xmM2Zr6YHqCKS2xo_malGOTWigtES3DNvIw2/pub?gid=0&single=true&output=csv";
+const LINK_CSV = "https://docs.google.com/spreadsheets/d/e/2PACX-1vT4hUnxOnSWRy5zB8-N8CoUbiajbB2eqvFXXMLrgxx-xmM2Zr6YHqCKS2xo_malGOTWigtES3DNvIw2/pub?gid=1265830848&single=true&output=csv";
 
 async function cargarStockDesdeExcel() {
     try {
