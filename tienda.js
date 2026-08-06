@@ -248,24 +248,62 @@ async function cargarStockDesdeExcel() {
         let datosCsv = await respuesta.text();
         let filas = datosCsv.split('\n');
 
-        for (let i = 1; i < filas.length; i++) {
-            let columnas = filas[i].split(',');
-            if (columnas.length < 3) continue;
+        // Detectar la columna de precio basándose en el header
+        let headers = filas[0].split(',').map(h => h.trim().toLowerCase());
+        let colId = 0;         // Columna del ID (stock-XX)
+        let colPrecio = -1;    // Columna del precio
 
-            let idProducto = columnas[0].trim();
-            let precioProducto = columnas[2].trim();
-
-            if (precioProducto) {
-                preciosDesdeExcel[idProducto] = parseInt(precioProducto);
-                let idPrecio = idProducto.replace('stock', 'precio');
-                let elementoPrecio = document.getElementById(idPrecio);
-
-                if (elementoPrecio) {
-                    elementoPrecio.innerText = '$' + parseInt(precioProducto).toLocaleString('es-AR');
-                }
+        // Buscar la columna que contenga "precio"
+        for (let h = 0; h < headers.length; h++) {
+            if (headers[h].includes('precio')) {
+                colPrecio = h;
+                break;
             }
         }
-        console.log("¡Conexión directa y sin límites activada!");
+        // Si no encuentra "precio", usar columna 2 por defecto
+        if (colPrecio === -1) colPrecio = 2;
+
+        for (let i = 1; i < filas.length; i++) {
+            let fila = filas[i].trim();
+            if (!fila) continue;
+
+            let columnas = fila.split(',');
+            if (columnas.length < colPrecio + 1) continue;
+
+            let idProducto = columnas[colId].trim();
+            if (!idProducto.startsWith('stock-')) continue;
+
+            // Limpiar el precio: quitar $, puntos de miles, espacios
+            let precioRaw = columnas[colPrecio].trim();
+            precioRaw = precioRaw.replace(/[$\s]/g, '');  // Quitar $ y espacios
+            precioRaw = precioRaw.replace(/\./g, '');      // Quitar puntos de miles
+            let precioNumero = parseInt(precioRaw) || 0;
+
+            // Guardar en memoria para agregarAlCarrito
+            preciosDesdeExcel[idProducto] = precioNumero;
+
+            // Actualizar el elemento de precio en el HTML
+            let idPrecio = idProducto.replace('stock', 'precio');
+            let elementoPrecio = document.getElementById(idPrecio);
+
+            if (elementoPrecio) {
+                if (precioNumero > 0) {
+                    elementoPrecio.innerText = '$' + precioNumero.toLocaleString('es-AR');
+                } else {
+                    elementoPrecio.innerText = 'Consultar';
+                }
+            }
+
+            // Actualizar los botones "Agregar" que referencian este stock
+            document.querySelectorAll(`button.btn-add`).forEach(btn => {
+                let onclick = btn.getAttribute('onclick');
+                if (onclick && onclick.includes("'" + idProducto + "'")) {
+                    // Reemplazar el precio 0 con el precio real
+                    btn.setAttribute('onclick', onclick.replace(/, \d+,/, ', ' + precioNumero + ','));
+                }
+            });
+        }
+        console.log("✅ Precios cargados desde Excel:", Object.keys(preciosDesdeExcel).length, "productos");
 
     } catch (error) {
         console.error("Error al leer el Excel directo:", error);
