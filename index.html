@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Ando Mateando — Mates artesanales, yerba premium y accesorios. Envíos a todo CABA. Tradición en cada cebada.">
+    <meta name="description" content="Ando Mateando — Mates artesanales, yerba premium y accesorios. Envíos a todo el país. Tradición en cada cebada.">
     <title>Ando Mateando</title>
     <link rel="icon" type="image/png" href="logo_sinfnd.png">
     <link rel="stylesheet" href="mate1.css">
@@ -87,7 +87,7 @@
         <section class="features">
         <div class="feature-item animate-on-scroll">
             <span class="icon">🚚</span>
-            <h3>Envíos a todo CABA</h3>
+            <h3>Envíos a todo el país</h3>
             <p>Tu compañero llega a casa estés donde estés.</p>
         </div>
         <div class="feature-item animate-on-scroll">
@@ -198,6 +198,34 @@
                     <button class="btn-add" onclick="agregarAlCarrito('Yerba Mate 500gr (Matesur)', 0, 'stock-5')">Agregar</button>
                 </div>
             </article>
+
+            <!-- 6. Yerba Mate 500gr (Sport) C/Palo -->
+            <article class="product-card animate-on-scroll">
+                <div class="product-img">
+                    <img src="yerba sport 500gr.webp" alt="Yerba Mate 500gr Sport"
+                         style="transform: scale(1.8); transform-origin: center center;" onclick="abrirLightbox(this)">
+                </div>
+                <div class="product-info">
+                    <h4>Yerba Mate 500gr (Sport) C/Palo</h4>
+                    <span class="price" id="precio-6">$0</span>
+                    <p class="stock-info">Stock: <span id="stock-6">0</span></p>
+                    <button class="btn-add" onclick="agregarAlCarrito('Yerba Mate 500gr (Sport) C/Palo', 0, 'stock-6')">Agregar</button>
+                </div>
+            </article>
+
+            <!-- 7. Yerba Mate 500gr (Don Omar) C/Palo -->
+            <article class="product-card animate-on-scroll">
+                <div class="product-img">
+                    <img src="Yerba don omar 500gr.webp" alt="Yerba Mate 500gr Don Omar"
+                         style="transform: scale(1.8); transform-origin: center center;" onclick="abrirLightbox(this)">
+                </div>
+                <div class="product-info">
+                    <h4>Yerba Mate 500gr (Don Omar) C/Palo</h4>
+                    <span class="price" id="precio-7">$0</span>
+                    <p class="stock-info">Stock: <span id="stock-7">0</span></p>
+                    <button class="btn-add" onclick="agregarAlCarrito('Yerba Mate 500gr (Don Omar) C/Palo', 0, 'stock-7')">Agregar</button>
+                </div>
+            </article>
         </div>
 
         <!-- ====== SECCIÓN: MATES ====== -->
@@ -210,7 +238,7 @@
         </div>
 
         <div class="product-grid">
-            <!-- stock-15 / stock-16: Mate Imperial Calabaza (Negro / Suela) -->
+            <!-- stock-17 / stock-18: Mate Imperial Calabaza (Negro / Suela) -->
             <article class="product-card animate-on-scroll" id="card-imperial-calabaza">
                 <div class="product-img">
                     <img id="img-imperial-calabaza" src="mateimperialcalabaza.jpg" alt="Mate Imperial Calabaza"
@@ -220,19 +248,19 @@
                     <h4>Mate Imperial Calabaza</h4>
                     <div class="color-selector">
                         <button class="color-swatch active" style="background: #1a1a2e;" title="Negro"
-                            onclick="cambiarVariante('imperial-calabaza', 'mateimperialcalabaza.jpg', 'Mate Imperial Calabaza Negro', 'stock-15', this)"></button>
+                            onclick="cambiarVariante('imperial-calabaza', 'mateimperialcalabaza.jpg', 'Mate Imperial Calabaza Negro', 'stock-17', this)"></button>
                         <button class="color-swatch" style="background: #c4956a;" title="Suela"
-                            onclick="cambiarVariante('imperial-calabaza', 'mateimperialcalabazasuela.jpg', 'Mate Imperial Calabaza Suela', 'stock-16', this)"></button>
+                            onclick="cambiarVariante('imperial-calabaza', 'mateimperialcalabazasuela.jpg', 'Mate Imperial Calabaza Suela', 'stock-18', this)"></button>
                     </div>
-                    <span class="price" id="precio-15">$0</span>
-                    <p class="stock-info">Stock: <span id="stock-15">0</span></p>
-                    <span class="price" id="precio-16" style="display:none;">$0</span>
-                    <p class="stock-info" style="display:none;">Stock: <span id="stock-16">0</span></p>
-                    <button class="btn-add" id="btn-imperial-calabaza" onclick="agregarAlCarrito('Mate Imperial Calabaza Negro', 0, 'stock-15')">Agregar</button>
+                    <span class="price" id="precio-17">$0</span>
+                    <p class="stock-info">Stock: <span id="stock-17">0</span></p>
+                    <span class="price" id="precio-18" style="display:none;">$0</span>
+                    <p class="stock-info" style="display:none;">Stock: <span id="stock-18">0</span></p>
+                    <button class="btn-add" id="btn-imperial-calabaza" onclick="agregarAlCarrito('Mate Imperial Calabaza Negro', 0, 'stock-17')">Agregar</button>
                 </div>
             </article>
 
-            <!-- stock-17 / stock-19: Mate Imperial Croco Alpaca (Negro / Marrón c/ Patitas) -->
+            <!-- stock-19 / stock-21: Mate Imperial Croco Alpaca (Negro / Marrón c/ Patitas) -->
             <article class="product-card animate-on-scroll" id="card-imperial-croco">
                 <div class="product-img">
                     <img id="img-imperial-croco" src="Mate Imperial Croco alpaca negro.jpeg" alt="Mate Imperial Croco Alpaca"
@@ -242,19 +270,19 @@
                     <h4>Mate Imperial Croco Alpaca</h4>
                     <div class="color-selector">
                         <button class="color-swatch active" style="background: #1a1a2e;" title="Negro"
-                            onclick="cambiarVariante('imperial-croco', 'Mate Imperial Croco alpaca negro.jpeg', 'Mate Imperial Croco Alpaca Negro', 'stock-17', this)"></button>
+                            onclick="cambiarVariante('imperial-croco', 'Mate Imperial Croco alpaca negro.jpeg', 'Mate Imperial Croco Alpaca Negro', 'stock-19', this)"></button>
                         <button class="color-swatch" style="background: #8B5E3C;" title="Marrón c/ Patitas"
-                            onclick="cambiarVariante('imperial-croco', 'Mate Imperial Croco alpaca marron con patitas.jpeg', 'Mate Imperial Croco Alpaca Marrón c/ Patitas', 'stock-19', this)"></button>
+                            onclick="cambiarVariante('imperial-croco', 'Mate Imperial Croco alpaca marron con patitas.jpeg', 'Mate Imperial Croco Alpaca Marrón c/ Patitas', 'stock-21', this)"></button>
                     </div>
-                    <span class="price" id="precio-17">$0</span>
-                    <p class="stock-info">Stock: <span id="stock-17">0</span></p>
-                    <span class="price" id="precio-19" style="display:none;">$0</span>
-                    <p class="stock-info" style="display:none;">Stock: <span id="stock-19">0</span></p>
-                    <button class="btn-add" id="btn-imperial-croco" onclick="agregarAlCarrito('Mate Imperial Croco Alpaca Negro', 0, 'stock-17')">Agregar</button>
+                    <span class="price" id="precio-19">$0</span>
+                    <p class="stock-info">Stock: <span id="stock-19">0</span></p>
+                    <span class="price" id="precio-21" style="display:none;">$0</span>
+                    <p class="stock-info" style="display:none;">Stock: <span id="stock-21">0</span></p>
+                    <button class="btn-add" id="btn-imperial-croco" onclick="agregarAlCarrito('Mate Imperial Croco Alpaca Negro', 0, 'stock-19')">Agregar</button>
                 </div>
             </article>
 
-            <!-- stock-18: Mate Imperial Criollo con Base Diseño -->
+            <!-- stock-20: Mate Imperial Criollo con Base Diseño -->
             <article class="product-card animate-on-scroll">
                 <div class="product-img">
                     <img src="Mate imperial criollo con base diseño.jpg" alt="Mate Imperial Criollo con Base Diseño"
@@ -262,13 +290,13 @@
                 </div>
                 <div class="product-info">
                     <h4>Mate Imperial Criollo con Base Diseño</h4>
-                    <span class="price" id="precio-18">$0</span>
-                    <p class="stock-info">Stock: <span id="stock-18">0</span></p>
-                    <button class="btn-add" onclick="agregarAlCarrito('Mate Imperial Criollo con Base Diseño', 0, 'stock-18')">Agregar</button>
+                    <span class="price" id="precio-20">$0</span>
+                    <p class="stock-info">Stock: <span id="stock-20">0</span></p>
+                    <button class="btn-add" onclick="agregarAlCarrito('Mate Imperial Criollo con Base Diseño', 0, 'stock-20')">Agregar</button>
                 </div>
             </article>
 
-            <!-- stock-20: Mate Imperial Calabaza Animal Print -->
+            <!-- stock-22: Mate Imperial Calabaza Animal Print -->
             <article class="product-card animate-on-scroll">
                 <div class="product-img">
                     <img src="Mate Imperial Calabaza animal print.webp" alt="Mate Imperial Calabaza Animal Print"
@@ -276,13 +304,13 @@
                 </div>
                 <div class="product-info">
                     <h4>Mate Imperial Calabaza Animal Print</h4>
-                    <span class="price" id="precio-20">$0</span>
-                    <p class="stock-info">Stock: <span id="stock-20">0</span></p>
-                    <button class="btn-add" onclick="agregarAlCarrito('Mate Imperial Calabaza Animal Print', 0, 'stock-20')">Agregar</button>
+                    <span class="price" id="precio-22">$0</span>
+                    <p class="stock-info">Stock: <span id="stock-22">0</span></p>
+                    <button class="btn-add" onclick="agregarAlCarrito('Mate Imperial Calabaza Animal Print', 0, 'stock-22')">Agregar</button>
                 </div>
             </article>
 
-            <!-- stock-21: Mate Imperial Alpaca Copa Mundial -->
+            <!-- stock-23: Mate Imperial Alpaca Copa Mundial -->
             <article class="product-card animate-on-scroll">
                 <div class="product-img">
                     <img src="Mate imperial alpaca copa mundial.jpg" alt="Mate Imperial Alpaca Copa Mundial"
@@ -290,13 +318,13 @@
                 </div>
                 <div class="product-info">
                     <h4>Mate Imperial Alpaca Copa Mundial</h4>
-                    <span class="price" id="precio-21">$0</span>
-                    <p class="stock-info">Stock: <span id="stock-21">0</span></p>
-                    <button class="btn-add" onclick="agregarAlCarrito('Mate Imperial Alpaca Copa Mundial', 0, 'stock-21')">Agregar</button>
+                    <span class="price" id="precio-23">$0</span>
+                    <p class="stock-info">Stock: <span id="stock-23">0</span></p>
+                    <button class="btn-add" onclick="agregarAlCarrito('Mate Imperial Alpaca Copa Mundial', 0, 'stock-23')">Agregar</button>
                 </div>
             </article>
 
-            <!-- stock-22: Mate Imperial Algarrobo -->
+            <!-- stock-24: Mate Imperial Algarrobo -->
             <article class="product-card animate-on-scroll">
                 <div class="product-img">
                     <img src="mateimperialalgarrobo1.jpg" data-images='["mateimperialalgarrobo1.jpg", "mateimperialalgarrobo2.jpg"]' alt="Mate Imperial Algarrobo"
@@ -304,13 +332,13 @@
                 </div>
                 <div class="product-info">
                     <h4>Mate Imperial Algarrobo</h4>
-                    <span class="price" id="precio-22">$0</span>
-                    <p class="stock-info">Stock: <span id="stock-22">0</span></p>
-                    <button class="btn-add" onclick="agregarAlCarrito('Mate Imperial Algarrobo', 0, 'stock-22')">Agregar</button>
+                    <span class="price" id="precio-24">$0</span>
+                    <p class="stock-info">Stock: <span id="stock-24">0</span></p>
+                    <button class="btn-add" onclick="agregarAlCarrito('Mate Imperial Algarrobo', 0, 'stock-24')">Agregar</button>
                 </div>
             </article>
 
-            <!-- stock-23: Mate Imperial Alpaca Lisa Equipos (River / San Lorenzo) -->
+            <!-- stock-25: Mate Imperial Alpaca Lisa Equipos (River / San Lorenzo) -->
             <article class="product-card animate-on-scroll" id="card-imperial-equipos">
                 <div class="product-img">
                     <img id="img-imperial-equipos" src="mate imperial alpaca liso equipos river.png" alt="Mate Imperial Alpaca Lisa Equipos"
@@ -319,13 +347,13 @@
                 </div>
                 <div class="product-info">
                     <h4>Mate Imperial Alpaca Lisa Equipos</h4>
-                    <span class="price" id="precio-23">$0</span>
-                    <p class="stock-info">Stock: <span id="stock-23">0</span></p>
-                    <button class="btn-add" onclick="agregarAlCarrito('Mate Imperial Alpaca Lisa Equipos', 0, 'stock-23')">Agregar</button>
+                    <span class="price" id="precio-25">$0</span>
+                    <p class="stock-info">Stock: <span id="stock-25">0</span></p>
+                    <button class="btn-add" onclick="agregarAlCarrito('Mate Imperial Alpaca Lisa Equipos', 0, 'stock-25')">Agregar</button>
                 </div>
             </article>
 
-            <!-- stock-24: Mate Imperial Alpaca Liso -->
+            <!-- stock-26: Mate Imperial Alpaca Liso -->
             <article class="product-card animate-on-scroll">
                 <div class="product-img">
                     <img src="mate imperial alpaca liso.png" alt="Mate Imperial Alpaca Liso"
@@ -333,13 +361,13 @@
                 </div>
                 <div class="product-info">
                     <h4>Mate Imperial Alpaca Liso</h4>
-                    <span class="price" id="precio-24">$0</span>
-                    <p class="stock-info">Stock: <span id="stock-24">0</span></p>
-                    <button class="btn-add" onclick="agregarAlCarrito('Mate Imperial Alpaca Liso', 0, 'stock-24')">Agregar</button>
+                    <span class="price" id="precio-26">$0</span>
+                    <p class="stock-info">Stock: <span id="stock-26">0</span></p>
+                    <button class="btn-add" onclick="agregarAlCarrito('Mate Imperial Alpaca Liso', 0, 'stock-26')">Agregar</button>
                 </div>
             </article>
 
-            <!-- stock-25: Mate Imperial Calabaza Alpaca Cincelada Lacre -->
+            <!-- stock-27: Mate Imperial Calabaza Alpaca Cincelada Lacre -->
             <article class="product-card animate-on-scroll">
                 <div class="product-img">
                     <img src="mate imperial calabaza alpaca cincelada lacre.jpeg" data-images='["mate imperial calabaza alpaca cincelada lacre.jpeg", "mate imperial calabaza alpaca cincelada lacre2.jpeg", "mate imperial calabaza alpaca cincelada lacre3.jpeg"]' alt="Mate Imperial Calabaza Alpaca Cincelada Lacre"
@@ -347,13 +375,13 @@
                 </div>
                 <div class="product-info">
                     <h4>Mate Imperial Calabaza Alpaca Cincelada Lacre</h4>
-                    <span class="price" id="precio-25">$0</span>
-                    <p class="stock-info">Stock: <span id="stock-25">0</span></p>
-                    <button class="btn-add" onclick="agregarAlCarrito('Mate Imperial Calabaza Alpaca Cincelada Lacre', 0, 'stock-25')">Agregar</button>
+                    <span class="price" id="precio-27">$0</span>
+                    <p class="stock-info">Stock: <span id="stock-27">0</span></p>
+                    <button class="btn-add" onclick="agregarAlCarrito('Mate Imperial Calabaza Alpaca Cincelada Lacre', 0, 'stock-27')">Agregar</button>
                 </div>
             </article>
 
-            <!-- stock-26 / stock-27: Mate Ranchero (Negro / Pintado) -->
+            <!-- stock-31 / stock-32: Mate Ranchero (Negro / Pintado) -->
             <article class="product-card animate-on-scroll" id="card-ranchero">
                 <div class="product-img">
                     <img id="img-ranchero" src="Mate Ranchero negro.png" alt="Mate Ranchero"
@@ -363,19 +391,19 @@
                     <h4>Mate Ranchero</h4>
                     <div class="color-selector">
                         <button class="color-swatch active" style="background: #1a1a2e;" title="Negro"
-                            onclick="cambiarVariante('ranchero', 'Mate Ranchero negro.png', 'Mate Ranchero Negro', 'stock-26', this)"></button>
+                            onclick="cambiarVariante('ranchero', 'Mate Ranchero negro.png', 'Mate Ranchero Negro', 'stock-31', this)"></button>
                         <button class="color-swatch" style="background: linear-gradient(135deg, #d4a574, #8B5E3C, #c4956a);" title="Pintado"
-                            onclick="cambiarVariante('ranchero', 'Mate Ranchero pintado.webp', 'Mate Ranchero Pintado', 'stock-27', this)"></button>
+                            onclick="cambiarVariante('ranchero', 'Mate Ranchero pintado.webp', 'Mate Ranchero Pintado', 'stock-32', this)"></button>
                     </div>
-                    <span class="price" id="precio-26">$0</span>
-                    <p class="stock-info">Stock: <span id="stock-26">0</span></p>
-                    <span class="price" id="precio-27" style="display:none;">$0</span>
-                    <p class="stock-info" style="display:none;">Stock: <span id="stock-27">0</span></p>
-                    <button class="btn-add" id="btn-ranchero" onclick="agregarAlCarrito('Mate Ranchero Negro', 0, 'stock-26')">Agregar</button>
+                    <span class="price" id="precio-31">$0</span>
+                    <p class="stock-info">Stock: <span id="stock-31">0</span></p>
+                    <span class="price" id="precio-32" style="display:none;">$0</span>
+                    <p class="stock-info" style="display:none;">Stock: <span id="stock-32">0</span></p>
+                    <button class="btn-add" id="btn-ranchero" onclick="agregarAlCarrito('Mate Ranchero Negro', 0, 'stock-31')">Agregar</button>
                 </div>
             </article>
 
-            <!-- stock-28: Mate Galleta -->
+            <!-- stock-33: Mate Galleta -->
             <article class="product-card animate-on-scroll">
                 <div class="product-img">
                     <img src="mate galleta.webp" alt="Mate Galleta"
@@ -383,13 +411,13 @@
                 </div>
                 <div class="product-info">
                     <h4>Mate Galleta</h4>
-                    <span class="price" id="precio-28">$0</span>
-                    <p class="stock-info">Stock: <span id="stock-28">0</span></p>
-                    <button class="btn-add" onclick="agregarAlCarrito('Mate Galleta', 0, 'stock-28')">Agregar</button>
+                    <span class="price" id="precio-33">$0</span>
+                    <p class="stock-info">Stock: <span id="stock-33">0</span></p>
+                    <button class="btn-add" onclick="agregarAlCarrito('Mate Galleta', 0, 'stock-33')">Agregar</button>
                 </div>
             </article>
 
-            <!-- stock-29: Mate Camionero Algarrobo -->
+            <!-- stock-34: Mate Camionero Algarrobo -->
             <article class="product-card animate-on-scroll">
                 <div class="product-img">
                     <img src="matealgarrobo1.jpg" data-images='["matealgarrobo1.jpg", "matealgarrobo2.jpg", "matealgarrobo3.jpg", "matealgarrobo4.jpg", "matealgarrobo5.jpg"]' alt="Mate Camionero Algarrobo"
@@ -397,13 +425,13 @@
                 </div>
                 <div class="product-info">
                     <h4>Mate Camionero Algarrobo</h4>
-                    <span class="price" id="precio-29">$0</span>
-                    <p class="stock-info">Stock: <span id="stock-29">0</span></p>
-                    <button class="btn-add" onclick="agregarAlCarrito('Mate Camionero Algarrobo', 0, 'stock-29')">Agregar</button>
+                    <span class="price" id="precio-34">$0</span>
+                    <p class="stock-info">Stock: <span id="stock-34">0</span></p>
+                    <button class="btn-add" onclick="agregarAlCarrito('Mate Camionero Algarrobo', 0, 'stock-34')">Agregar</button>
                 </div>
             </article>
 
-            <!-- stock-30: Mate Camionero Calabaza -->
+            <!-- stock-35: Mate Camionero Calabaza -->
             <article class="product-card animate-on-scroll">
                 <div class="product-img">
                     <img src="matecamionerocalabaza1.jpg" data-images='["matecamionerocalabaza1.jpg", "matecamionerocalabaza2.jpg", "matecamionerocalabaza3.jpg"]' alt="Mate Camionero Calabaza"
@@ -411,13 +439,13 @@
                 </div>
                 <div class="product-info">
                     <h4>Mate Camionero Calabaza</h4>
-                    <span class="price" id="precio-30">$0</span>
-                    <p class="stock-info">Stock: <span id="stock-30">0</span></p>
-                    <button class="btn-add" onclick="agregarAlCarrito('Mate Camionero Calabaza', 0, 'stock-30')">Agregar</button>
+                    <span class="price" id="precio-35">$0</span>
+                    <p class="stock-info">Stock: <span id="stock-35">0</span></p>
+                    <button class="btn-add" onclick="agregarAlCarrito('Mate Camionero Calabaza', 0, 'stock-35')">Agregar</button>
                 </div>
             </article>
 
-            <!-- stock-31: Mate Torpedo Calabaza -->
+            <!-- stock-37: Mate Torpedo Calabaza -->
             <article class="product-card animate-on-scroll">
                 <div class="product-img">
                     <img src="torpedo1.jpg" data-images='["torpedo1.jpg", "torpedo2.jpg", "torpedo3.jpg"]' alt="Mate Torpedo Calabaza"
@@ -425,13 +453,13 @@
                 </div>
                 <div class="product-info">
                     <h4>Mate Torpedo Calabaza</h4>
-                    <span class="price" id="precio-31">$0</span>
-                    <p class="stock-info">Stock: <span id="stock-31">0</span></p>
-                    <button class="btn-add" onclick="agregarAlCarrito('Mate Torpedo Calabaza', 0, 'stock-31')">Agregar</button>
+                    <span class="price" id="precio-37">$0</span>
+                    <p class="stock-info">Stock: <span id="stock-37">0</span></p>
+                    <button class="btn-add" onclick="agregarAlCarrito('Mate Torpedo Calabaza', 0, 'stock-37')">Agregar</button>
                 </div>
             </article>
 
-            <!-- stock-32: Mate Torpedo Calabaza Alpaca con Base (Marrón / Negro) -->
+            <!-- stock-99: Mate Torpedo Calabaza Alpaca con Base (Marrón / Negro) -->
             <article class="product-card animate-on-scroll" id="card-torpedo-alpaca">
                 <div class="product-img">
                     <img id="img-torpedo-alpaca" src="Mate torpedo alpaca marron con base.png" alt="Mate Torpedo Calabaza Alpaca con Base"
@@ -442,17 +470,17 @@
                     <h4>Mate Torpedo Alpaca con Base</h4>
                     <div class="color-selector">
                         <button class="color-swatch active" style="background: #8B5E3C;" title="Marrón"
-                            onclick="cambiarVariante('torpedo-alpaca', 'Mate torpedo alpaca marron con base.png', 'Mate Torpedo Alpaca Marrón con Base', 'stock-32', this)"></button>
+                            onclick="cambiarVariante('torpedo-alpaca', 'Mate torpedo alpaca marron con base.png', 'Mate Torpedo Alpaca Marrón con Base', 'stock-99', this)"></button>
                         <button class="color-swatch" style="background: #1a1a2e;" title="Negro"
-                            onclick="cambiarVariante('torpedo-alpaca', 'Mate torpedo alpaca negro con base.png', 'Mate Torpedo Alpaca Negro con Base', 'stock-32', this)"></button>
+                            onclick="cambiarVariante('torpedo-alpaca', 'Mate torpedo alpaca negro con base.png', 'Mate Torpedo Alpaca Negro con Base', 'stock-99', this)"></button>
                     </div>
-                    <span class="price" id="precio-32">$0</span>
-                    <p class="stock-info">Stock: <span id="stock-32">0</span></p>
-                    <button class="btn-add" id="btn-torpedo-alpaca" onclick="agregarAlCarrito('Mate Torpedo Alpaca Marrón con Base', 0, 'stock-32')">Agregar</button>
+                    <span class="price" id="precio-99">$0</span>
+                    <p class="stock-info">Stock: <span id="stock-99">0</span></p>
+                    <button class="btn-add" id="btn-torpedo-alpaca" onclick="agregarAlCarrito('Mate Torpedo Alpaca Marrón con Base', 0, 'stock-99')">Agregar</button>
                 </div>
             </article>
 
-            <!-- stock-33: Mate Torpedo Alpaca con Base Bronce -->
+            <!-- stock-38: Mate Torpedo Alpaca con Base Bronce -->
             <article class="product-card animate-on-scroll">
                 <div class="product-img">
                     <img src="Mate torpedo alpaca con base bronce.jpg" alt="Mate Torpedo Alpaca con Base Bronce"
@@ -460,13 +488,13 @@
                 </div>
                 <div class="product-info">
                     <h4>Mate Torpedo Alpaca con Base Bronce</h4>
-                    <span class="price" id="precio-33">$0</span>
-                    <p class="stock-info">Stock: <span id="stock-33">0</span></p>
-                    <button class="btn-add" onclick="agregarAlCarrito('Mate Torpedo Alpaca con Base Bronce', 0, 'stock-33')">Agregar</button>
+                    <span class="price" id="precio-38">$0</span>
+                    <p class="stock-info">Stock: <span id="stock-38">0</span></p>
+                    <button class="btn-add" onclick="agregarAlCarrito('Mate Torpedo Alpaca con Base Bronce', 0, 'stock-38')">Agregar</button>
                 </div>
             </article>
 
-            <!-- stock-34: Mate Roma Alpaca (Marrón / Negro) -->
+            <!-- stock-39: Mate Roma Alpaca (Marrón / Negro) -->
             <article class="product-card animate-on-scroll" id="card-roma">
                 <div class="product-img">
                     <img id="img-roma" src="Mate roma marron alpaca.png" alt="Mate Roma Alpaca"
@@ -477,17 +505,17 @@
                     <h4>Mate Roma Alpaca</h4>
                     <div class="color-selector">
                         <button class="color-swatch active" style="background: #8B5E3C;" title="Marrón"
-                            onclick="cambiarVariante('roma', 'Mate roma marron alpaca.png', 'Mate Roma Alpaca Marrón', 'stock-34', this)"></button>
+                            onclick="cambiarVariante('roma', 'Mate roma marron alpaca.png', 'Mate Roma Alpaca Marrón', 'stock-39', this)"></button>
                         <button class="color-swatch" style="background: #1a1a2e;" title="Negro"
-                            onclick="cambiarVariante('roma', 'Mate roma negro alpaca.png', 'Mate Roma Alpaca Negro', 'stock-34', this)"></button>
+                            onclick="cambiarVariante('roma', 'Mate roma negro alpaca.png', 'Mate Roma Alpaca Negro', 'stock-39', this)"></button>
                     </div>
-                    <span class="price" id="precio-34">$0</span>
-                    <p class="stock-info">Stock: <span id="stock-34">0</span></p>
-                    <button class="btn-add" id="btn-roma" onclick="agregarAlCarrito('Mate Roma Alpaca Marrón', 0, 'stock-34')">Agregar</button>
+                    <span class="price" id="precio-39">$0</span>
+                    <p class="stock-info">Stock: <span id="stock-39">0</span></p>
+                    <button class="btn-add" id="btn-roma" onclick="agregarAlCarrito('Mate Roma Alpaca Marrón', 0, 'stock-39')">Agregar</button>
                 </div>
             </article>
 
-            <!-- stock-35: Mate Algarrobo Grabado -->
+            <!-- stock-40: Mate Algarrobo Grabado -->
             <article class="product-card animate-on-scroll">
                 <div class="product-img">
                     <img src="Mate algarrobo grabado.jpg" alt="Mate Algarrobo Grabado"
@@ -495,9 +523,65 @@
                 </div>
                 <div class="product-info">
                     <h4>Mate Algarrobo Grabado</h4>
-                    <span class="price" id="precio-35">$0</span>
-                    <p class="stock-info">Stock: <span id="stock-35">0</span></p>
-                    <button class="btn-add" onclick="agregarAlCarrito('Mate Algarrobo Grabado', 0, 'stock-35')">Agregar</button>
+                    <span class="price" id="precio-40">$0</span>
+                    <p class="stock-info">Stock: <span id="stock-40">0</span></p>
+                    <button class="btn-add" onclick="agregarAlCarrito('Mate Algarrobo Grabado', 0, 'stock-40')">Agregar</button>
+                </div>
+            </article>
+
+            <!-- stock-28: Mate Imperial Alpaca Lisa Base Bolita -->
+            <article class="product-card animate-on-scroll">
+                <div class="product-img">
+                    <img src="Mate imperial alpaca lisa base bolita.png" alt="Mate Imperial Alpaca Lisa Base Bolita"
+                         style="transform: scale(1); transform-origin: center center;" onclick="abrirLightbox(this)">
+                </div>
+                <div class="product-info">
+                    <h4>Mate Imperial Alpaca Lisa Base Bolita</h4>
+                    <span class="price" id="precio-28">$0</span>
+                    <p class="stock-info">Stock: <span id="stock-28">0</span></p>
+                    <button class="btn-add" onclick="agregarAlCarrito('Mate Imperial Alpaca Lisa Base Bolita', 0, 'stock-28')">Agregar</button>
+                </div>
+            </article>
+
+            <!-- stock-29: Mate Imperial Arg Alpaca -->
+            <article class="product-card animate-on-scroll">
+                <div class="product-img">
+                    <img src="Mate imperial Arg alpaca.jfif" alt="Mate Imperial Arg Alpaca"
+                         style="transform: scale(1); transform-origin: center center;" onclick="abrirLightbox(this)">
+                </div>
+                <div class="product-info">
+                    <h4>Mate Imperial Arg Alpaca</h4>
+                    <span class="price" id="precio-29">$0</span>
+                    <p class="stock-info">Stock: <span id="stock-29">0</span></p>
+                    <button class="btn-add" onclick="agregarAlCarrito('Mate Imperial Arg Alpaca', 0, 'stock-29')">Agregar</button>
+                </div>
+            </article>
+
+            <!-- stock-30: Mate Imperial Liso Alpaca -->
+            <article class="product-card animate-on-scroll">
+                <div class="product-img">
+                    <img src="Mate imperial liso Alpaca.jpg" alt="Mate Imperial Liso Alpaca"
+                         style="transform: scale(1); transform-origin: center center;" onclick="abrirLightbox(this)">
+                </div>
+                <div class="product-info">
+                    <h4>Mate Imperial Liso Alpaca</h4>
+                    <span class="price" id="precio-30">$0</span>
+                    <p class="stock-info">Stock: <span id="stock-30">0</span></p>
+                    <button class="btn-add" onclick="agregarAlCarrito('Mate Imperial Liso Alpaca', 0, 'stock-30')">Agregar</button>
+                </div>
+            </article>
+
+            <!-- stock-36: Mate Torpedo Alpaca Cincelada Base Bolita -->
+            <article class="product-card animate-on-scroll">
+                <div class="product-img">
+                    <img src="Mate torpedo alpaca cincelada base bolita.png" alt="Mate Torpedo Alpaca Cincelada Base Bolita"
+                         style="transform: scale(1); transform-origin: center center;" onclick="abrirLightbox(this)">
+                </div>
+                <div class="product-info">
+                    <h4>Mate Torpedo Alpaca Cincelada Base Bolita</h4>
+                    <span class="price" id="precio-36">$0</span>
+                    <p class="stock-info">Stock: <span id="stock-36">0</span></p>
+                    <button class="btn-add" onclick="agregarAlCarrito('Mate Torpedo Alpaca Cincelada Base Bolita', 0, 'stock-36')">Agregar</button>
                 </div>
             </article>
         </div>
@@ -512,7 +596,7 @@
         </div>
 
         <div class="product-grid">
-            <!-- stock-6: Termo Plateado 1L P/M -->
+            <!-- stock-8: Termo Plateado 1L P/M -->
             <article class="product-card animate-on-scroll">
                 <div class="product-img">
                     <img src="termo1.jpg" data-images='["termo1.jpg", "termo2.jpg", "termo3.jpg"]' alt="Termo Plateado 1L P/M"
@@ -520,13 +604,13 @@
                 </div>
                 <div class="product-info">
                     <h4>Termo Plateado 1L P/M</h4>
-                    <span class="price" id="precio-6">$0</span>
-                    <p class="stock-info">Stock: <span id="stock-6">0</span></p>
-                    <button class="btn-add" onclick="agregarAlCarrito('Termo Plateado 1L P/M', 0, 'stock-6')">Agregar</button>
+                    <span class="price" id="precio-8">$0</span>
+                    <p class="stock-info">Stock: <span id="stock-8">0</span></p>
+                    <button class="btn-add" onclick="agregarAlCarrito('Termo Plateado 1L P/M', 0, 'stock-8')">Agregar</button>
                 </div>
             </article>
 
-            <!-- stock-7 / stock-8: Termo Flow Yelton 1L P/B (Negro / Blanco) -->
+            <!-- stock-9 / stock-10: Termo Flow Yelton 1L P/B (Negro / Blanco) -->
             <article class="product-card animate-on-scroll" id="card-termo-flow">
                 <div class="product-img">
                     <img id="img-termo-flow" src="Termo Flow 1000 ml Yelton Negro.jfif" alt="Termo Flow Yelton 1L P/B"
@@ -536,29 +620,29 @@
                     <h4>Termo Flow Yelton 1L P/B</h4>
                     <div class="color-selector">
                         <button class="color-swatch active" style="background: #1a1a2e;" title="Negro"
-                            onclick="cambiarVariante('termo-flow', 'Termo Flow 1000 ml Yelton Negro.jfif', 'Termo Flow Yelton Negro 1L P/B', 'stock-7', this)"></button>
+                            onclick="cambiarVariante('termo-flow', 'Termo Flow 1000 ml Yelton Negro.jfif', 'Termo Flow Yelton Negro 1L P/B', 'stock-9', this)"></button>
                         <button class="color-swatch" style="background: #f5f5f0;" title="Blanco"
-                            onclick="cambiarVariante('termo-flow', 'Termo Flow 1000 ml Yelton Blanco.jfif', 'Termo Flow Yelton Blanco 1L P/B', 'stock-8', this)"></button>
+                            onclick="cambiarVariante('termo-flow', 'Termo Flow 1000 ml Yelton Blanco.jfif', 'Termo Flow Yelton Blanco 1L P/B', 'stock-10', this)"></button>
                     </div>
-                    <span class="price" id="precio-7">$0</span>
-                    <p class="stock-info">Stock: <span id="stock-7">0</span></p>
-                    <span class="price" id="precio-8" style="display:none;">$0</span>
-                    <p class="stock-info" style="display:none;">Stock: <span id="stock-8">0</span></p>
-                    <button class="btn-add" id="btn-termo-flow" onclick="agregarAlCarrito('Termo Flow Yelton Negro 1L P/B', 0, 'stock-7')">Agregar</button>
+                    <span class="price" id="precio-9">$0</span>
+                    <p class="stock-info">Stock: <span id="stock-9">0</span></p>
+                    <span class="price" id="precio-10" style="display:none;">$0</span>
+                    <p class="stock-info" style="display:none;">Stock: <span id="stock-10">0</span></p>
+                    <button class="btn-add" id="btn-termo-flow" onclick="agregarAlCarrito('Termo Flow Yelton Negro 1L P/B', 0, 'stock-9')">Agregar</button>
                 </div>
             </article>
 
-            <!-- stock-39: Pico de Termos tipo FLOW -->
+            <!-- stock-44: Pico de Termos tipo FLOW -->
             <article class="product-card animate-on-scroll">
                 <div class="product-img">
-                    <img src="bombilla pico e loro.png" alt="Pico de Termos tipo FLOW"
+                    <img src="Pico de termos tipo FLOW.webp" alt="Pico de Termos tipo FLOW"
                          style="transform: scale(1); transform-origin: center center;" onclick="abrirLightbox(this)">
                 </div>
                 <div class="product-info">
                     <h4>Pico de Termos tipo FLOW</h4>
-                    <span class="price" id="precio-39">$0</span>
-                    <p class="stock-info">Stock: <span id="stock-39">0</span></p>
-                    <button class="btn-add" onclick="agregarAlCarrito('Pico de Termos tipo FLOW', 0, 'stock-39')">Agregar</button>
+                    <span class="price" id="precio-44">$0</span>
+                    <p class="stock-info">Stock: <span id="stock-44">0</span></p>
+                    <button class="btn-add" onclick="agregarAlCarrito('Pico de Termos tipo FLOW', 0, 'stock-44')">Agregar</button>
                 </div>
             </article>
         </div>
@@ -581,9 +665,9 @@
                 </div>
                 <div class="product-info">
                     <h4>Bombilla Fina Paleta</h4>
-                    <span class="price" id="precio-9">$0</span>
-                    <p class="stock-info">Stock: <span id="stock-9">0</span></p>
-                    <button class="btn-add" onclick="agregarAlCarrito('Bombilla Fina Paleta', 0, 'stock-9')">Agregar</button>
+                    <span class="price" id="precio-11">$0</span>
+                    <p class="stock-info">Stock: <span id="stock-11">0</span></p>
+                    <button class="btn-add" onclick="agregarAlCarrito('Bombilla Fina Paleta', 0, 'stock-11')">Agregar</button>
                 </div>
             </article>
 
@@ -595,9 +679,9 @@
                 </div>
                 <div class="product-info">
                     <h4>Bombilla Pico de Loro CORTA</h4>
-                    <span class="price" id="precio-10">$0</span>
-                    <p class="stock-info">Stock: <span id="stock-10">0</span></p>
-                    <button class="btn-add" onclick="agregarAlCarrito('Bombilla Pico de Loro CORTA', 0, 'stock-10')">Agregar</button>
+                    <span class="price" id="precio-12">$0</span>
+                    <p class="stock-info">Stock: <span id="stock-12">0</span></p>
+                    <button class="btn-add" onclick="agregarAlCarrito('Bombilla Pico de Loro CORTA', 0, 'stock-12')">Agregar</button>
                 </div>
             </article>
 
@@ -609,9 +693,9 @@
                 </div>
                 <div class="product-info">
                     <h4>Bombilla Pico de Loro LARGA</h4>
-                    <span class="price" id="precio-11">$0</span>
-                    <p class="stock-info">Stock: <span id="stock-11">0</span></p>
-                    <button class="btn-add" onclick="agregarAlCarrito('Bombilla Pico de Loro LARGA', 0, 'stock-11')">Agregar</button>
+                    <span class="price" id="precio-13">$0</span>
+                    <p class="stock-info">Stock: <span id="stock-13">0</span></p>
+                    <button class="btn-add" onclick="agregarAlCarrito('Bombilla Pico de Loro LARGA', 0, 'stock-13')">Agregar</button>
                 </div>
             </article>
 
@@ -623,9 +707,9 @@
                 </div>
                 <div class="product-info">
                     <h4>Bombilla Pico de Loro Alpaca</h4>
-                    <span class="price" id="precio-12">$0</span>
-                    <p class="stock-info">Stock: <span id="stock-12">0</span></p>
-                    <button class="btn-add" onclick="agregarAlCarrito('Bombilla Pico de Loro Alpaca', 0, 'stock-12')">Agregar</button>
+                    <span class="price" id="precio-14">$0</span>
+                    <p class="stock-info">Stock: <span id="stock-14">0</span></p>
+                    <button class="btn-add" onclick="agregarAlCarrito('Bombilla Pico de Loro Alpaca', 0, 'stock-14')">Agregar</button>
                 </div>
             </article>
 
@@ -637,9 +721,9 @@
                 </div>
                 <div class="product-info">
                     <h4>Bombillón Cincelado</h4>
-                    <span class="price" id="precio-13">$0</span>
-                    <p class="stock-info">Stock: <span id="stock-13">0</span></p>
-                    <button class="btn-add" onclick="agregarAlCarrito('Bombillón Cincelado', 0, 'stock-13')">Agregar</button>
+                    <span class="price" id="precio-15">$0</span>
+                    <p class="stock-info">Stock: <span id="stock-15">0</span></p>
+                    <button class="btn-add" onclick="agregarAlCarrito('Bombillón Cincelado', 0, 'stock-15')">Agregar</button>
                 </div>
             </article>
 
@@ -651,9 +735,9 @@
                 </div>
                 <div class="product-info">
                     <h4>Bombillón Cincelado Alpaca 2 Anillos</h4>
-                    <span class="price" id="precio-14">$0</span>
-                    <p class="stock-info">Stock: <span id="stock-14">0</span></p>
-                    <button class="btn-add" onclick="agregarAlCarrito('Bombillón Cincelado Alpaca 2 Anillos', 0, 'stock-14')">Agregar</button>
+                    <span class="price" id="precio-16">$0</span>
+                    <p class="stock-info">Stock: <span id="stock-16">0</span></p>
+                    <button class="btn-add" onclick="agregarAlCarrito('Bombillón Cincelado Alpaca 2 Anillos', 0, 'stock-16')">Agregar</button>
                 </div>
             </article>
         </div>
@@ -667,8 +751,7 @@
             </div>
         </div>
 
-        <div class="product-grid">
-            <!-- stock-40: Yerbera y Azucarera Yelton -->
+            <!-- stock-45: Yerbera y Azucarera Yelton -->
             <article class="product-card animate-on-scroll">
                 <div class="product-img">
                     <img src="yerbera y azucarera yelton.png" data-images='["yerbera y azucarera yelton.png", "yerbera y azucarera yelton2.png"]' alt="Yerbera y Azucarera Yelton"
@@ -676,23 +759,51 @@
                 </div>
                 <div class="product-info">
                     <h4>Yerbera y Azucarera Yelton</h4>
-                    <span class="price" id="precio-40">$0</span>
-                    <p class="stock-info">Stock: <span id="stock-40">0</span></p>
-                    <button class="btn-add" onclick="agregarAlCarrito('Yerbera y Azucarera Yelton', 0, 'stock-40')">Agregar</button>
+                    <span class="price" id="precio-45">$0</span>
+                    <p class="stock-info">Stock: <span id="stock-45">0</span></p>
+                    <button class="btn-add" onclick="agregarAlCarrito('Yerbera y Azucarera Yelton', 0, 'stock-45')">Agregar</button>
                 </div>
             </article>
 
-            <!-- stock-41: Yerbera y Azucarera -->
+            <!-- stock-46: Yerbera y Azucarera Cordura -->
             <article class="product-card animate-on-scroll">
                 <div class="product-img">
-                    <img src="yerbera y azucarera.png" alt="Yerbera y Azucarera"
+                    <img src="yerbera y azucarera.png" alt="Yerbera y Azucarera Cordura"
                          style="transform: scale(1); transform-origin: center center;" onclick="abrirLightbox(this)">
                 </div>
                 <div class="product-info">
-                    <h4>Yerbera y Azucarera</h4>
-                    <span class="price" id="precio-41">$0</span>
-                    <p class="stock-info">Stock: <span id="stock-41">0</span></p>
-                    <button class="btn-add" onclick="agregarAlCarrito('Yerbera y Azucarera', 0, 'stock-41')">Agregar</button>
+                    <h4>Yerbera y Azucarera Cordura</h4>
+                    <span class="price" id="precio-46">$0</span>
+                    <p class="stock-info">Stock: <span id="stock-46">0</span></p>
+                    <button class="btn-add" onclick="agregarAlCarrito('Yerbera y Azucarera Cordura', 0, 'stock-46')">Agregar</button>
+                </div>
+            </article>
+
+            <!-- stock-47: Yerbera y Azucarera Tambor LISA -->
+            <article class="product-card animate-on-scroll">
+                <div class="product-img">
+                    <img src="yerbera y azucarera.png" alt="Yerbera y Azucarera Tambor LISA"
+                         style="transform: scale(1); transform-origin: center center;" onclick="abrirLightbox(this)">
+                </div>
+                <div class="product-info">
+                    <h4>Yerbera y Azucarera Tambor LISA</h4>
+                    <span class="price" id="precio-47">$0</span>
+                    <p class="stock-info">Stock: <span id="stock-47">0</span></p>
+                    <button class="btn-add" onclick="agregarAlCarrito('Yerbera y Azucarera Tambor LISA', 0, 'stock-47')">Agregar</button>
+                </div>
+            </article>
+
+            <!-- stock-48: Mate Termico Acero Recto -->
+            <article class="product-card animate-on-scroll">
+                <div class="product-img">
+                    <img src="mate termico recto acero" data-images='["mate termico recto acero", "mate termico recto acero1", "mate termico recto acero2", "mate termico recto acero3"]' alt="Mate Termico Acero Recto"
+                         style="transform: scale(1); transform-origin: center center;" onclick="abrirLightbox(this)">
+                </div>
+                <div class="product-info">
+                    <h4>Mate Termico Acero Recto</h4>
+                    <span class="price" id="precio-48">$0</span>
+                    <p class="stock-info">Stock: <span id="stock-48">0</span></p>
+                    <button class="btn-add" onclick="agregarAlCarrito('Mate Termico Acero Recto', 0, 'stock-48')">Agregar</button>
                 </div>
             </article>
         </div>
@@ -707,7 +818,7 @@
         </div>
 
         <div class="product-grid">
-            <!-- stock-36: Canasta Cuero Pelota Negra -->
+            <!-- stock-41: Canasta Cuero Pelota Negra -->
             <article class="product-card animate-on-scroll">
                 <div class="product-img">
                     <img src="Canasta cuero premium pelota.png" alt="Canasta Cuero Pelota Negra"
@@ -715,13 +826,13 @@
                 </div>
                 <div class="product-info">
                     <h4>Canasta Cuero Pelota Negra</h4>
-                    <span class="price" id="precio-36">$0</span>
-                    <p class="stock-info">Stock: <span id="stock-36">0</span></p>
-                    <button class="btn-add" onclick="agregarAlCarrito('Canasta Cuero Pelota Negra', 0, 'stock-36')">Agregar</button>
+                    <span class="price" id="precio-41">$0</span>
+                    <p class="stock-info">Stock: <span id="stock-41">0</span></p>
+                    <button class="btn-add" onclick="agregarAlCarrito('Canasta Cuero Pelota Negra', 0, 'stock-41')">Agregar</button>
                 </div>
             </article>
 
-            <!-- stock-37: Canasta Mango Flexible Arg. Estampada -->
+            <!-- stock-42: Canasta Mango Flexible Arg. Estampada -->
             <article class="product-card animate-on-scroll">
                 <div class="product-img">
                     <img src="Canasta mango flexible estampada.jpg" alt="Canasta Mango Flexible Arg. Estampada"
@@ -729,13 +840,13 @@
                 </div>
                 <div class="product-info">
                     <h4>Canasta Mango Flexible Arg. Estampada</h4>
-                    <span class="price" id="precio-37">$0</span>
-                    <p class="stock-info">Stock: <span id="stock-37">0</span></p>
-                    <button class="btn-add" onclick="agregarAlCarrito('Canasta Mango Flexible Arg. Estampada', 0, 'stock-37')">Agregar</button>
+                    <span class="price" id="precio-42">$0</span>
+                    <p class="stock-info">Stock: <span id="stock-42">0</span></p>
+                    <button class="btn-add" onclick="agregarAlCarrito('Canasta Mango Flexible Arg. Estampada', 0, 'stock-42')">Agregar</button>
                 </div>
             </article>
 
-            <!-- stock-38: Canasta Cuero Premium Guarda Pampeana -->
+            <!-- stock-43: Canasta Cuero Premium Guarda Pampeana -->
             <article class="product-card animate-on-scroll">
                 <div class="product-img">
                     <img src="Canasta cuero premium guarda pampeana.jpg" alt="Canasta Cuero Premium Guarda Pampeana"
@@ -743,9 +854,9 @@
                 </div>
                 <div class="product-info">
                     <h4>Canasta Cuero Premium Guarda Pampeana</h4>
-                    <span class="price" id="precio-38">$0</span>
-                    <p class="stock-info">Stock: <span id="stock-38">0</span></p>
-                    <button class="btn-add" onclick="agregarAlCarrito('Canasta Cuero Premium Guarda Pampeana', 0, 'stock-38')">Agregar</button>
+                    <span class="price" id="precio-43">$0</span>
+                    <p class="stock-info">Stock: <span id="stock-43">0</span></p>
+                    <button class="btn-add" onclick="agregarAlCarrito('Canasta Cuero Premium Guarda Pampeana', 0, 'stock-43')">Agregar</button>
                 </div>
             </article>
         </div>
@@ -819,11 +930,11 @@
             <div class="faq-container animate-on-scroll">
                 <div class="faq-item">
                     <button class="faq-question">
-                        <span>¿Hacen envíos fuera de CABA?</span>
+                        <span>¿Hacen envíos a todo el país?</span>
                         <span class="faq-icon">↓</span>
                     </button>
                     <div class="faq-answer">
-                        <p>Por el momento realizamos envíos únicamente dentro de CABA de manera directa para garantizar que los productos lleguen rápidos y en perfectas condiciones. Podés consultar el costo de envío a tu zona al momento de realizar tu pedido.</p>
+                        <p>Sí, realizamos envíos a todo el país. Podés consultar el costo de envío a tu zona al momento de realizar tu pedido.</p>
                     </div>
                 </div>
 
